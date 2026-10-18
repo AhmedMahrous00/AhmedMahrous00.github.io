@@ -9,8 +9,8 @@
   pages = {1--9},
   url = {https://doi.org/10.1109/icbc67748.2026.11575494}
 }
-</pre></section><section id="full-text"><h2>Full text</h2><p class="version-note">HTML reading edition transcribed from the linked PDF; this may be an author manuscript rather than the publisher-formatted version. See the <a href="paper.pdf">PDF</a> for the original page layout and mathematical notation. The final published citation is provided above.</p><div class="paper-body"><div class="article-text">
-<section aria-label="PDF page 1" class="source-page" id="fulltext-page-1"><p class="page-source"><a href="paper.pdf#page=1">PDF page 1</a></p>
+</pre></section><section id="full-text"><h2>Full text</h2><div class="paper-body"><div class="article-text">
+<section class="source-page" id="fulltext-page-1">
 <h3>I. INTRODUCTION</h3>
 <p>Pump-and-dump schemes, which carry severe legal penalties in traditional financial markets, have increasingly become a structural aspect of cryptocurrency markets. The prevalence and variety of these activities have made cryptocurrency market manipulation a significant field of academic inquiry [1]. Cryptocurrency markets have attracted substantial interest from retail investors, who have developed a more speculative trading culture. This, along with the relatively unregulated nature and the ease of issuing low-capital altcoins, creates conditions attractive for manipulators. One common manipulation technique is the <em>scheduled pump-and-dump</em> , where organizers announce in advance the time of the event (but not the cryptocurrency). At that scheduled time, they reveal the target cryptocurrency, and participants collectively race to buy it before the organizers sell their holdings. Participants buy, hoping to enter faster than others and capture the price spike. </p>
 <p>Telegram, a prominent social-media messaging platform, plays a central role in the coordination of these fraudulent schemes [2]. In numerous public and private groups, anonymous organizers initiate such synchronized buying campaigns targeting cryptocurrencies. Telegram’s large, pseudonymous group chats—frequently comprising tens or hundreds of thousands of members—enable high-reach realtime dissemination of pump instructions while minimizing the risk of regulatory detection. Empirical studies have documented thousands of pump events on Telegram between 2018 and 2022, predominantly targeting obscure digital assets with low liquidity [3, 4]. These schemes involve large amounts of money—in the order of billions of USD and impact a large portion of cryptocurrencies (e.g., 1 in 4 cryptocurrencies listed on Binance have been previously targeted [5]). The unstructured, highvolume nature of Telegram cryptocurrency-related messages— often characterized by specific language—poses challenges for surveillance using natural language processing techniques. </p>
@@ -25,7 +25,7 @@
 </li>
 </ul>
 </section>
-<section aria-label="PDF page 2" class="source-page" id="fulltext-page-2"><p class="page-source"><a href="paper.pdf#page=2">PDF page 2</a></p>
+<section class="source-page" id="fulltext-page-2">
 <ul>
 <li>
 <p>3) <em>Extraction benchmarks.</em> We establish the first benchmark for extracting the target cryptocurrency and exchange from pump announcements. Comparing rule-based methods, a long-context transformer, and LLMs, we find that LLMs achieve up to 0.91 joint accuracy and substantially outperform traditional approaches, while remaining practical when applied only to detected windows. We also show that dictionary-based heuristics used in prior work are unreliable. </p>
@@ -50,8 +50,8 @@
 <p>1e.g., https://www.pump-groups.com/crypto-pump-and-dump </p>
 </blockquote>
 </section>
-<section aria-label="PDF page 3" class="source-page" id="fulltext-page-3"><p class="page-source"><a href="paper.pdf#page=3">PDF page 3</a></p>
-<p>TABLE I: Comparison of related work (✓=Yes; [unmapped symbol]=No; ♢=Partial) </p>
+<section class="source-page" id="fulltext-page-3">
+<p>TABLE I: Comparison of related work (✓=Yes; ✗=No; ♢=Partial) </p>
 <div aria-label="Table from PDF page 3" class="table-scroll" role="region" tabindex="0"><table class="article-table"><tr><th></th><th>Manually</th><th>Public</th><th>Message-level</th><th></th><th></th><th>Detection</th><th>Extraction</th><th></th></tr><tr><td>Paper</td><td>labeled</td><td>data</td><td>analysis</td><td># Messages</td><td># Pumps</td><td>Model</td><td>Model</td><td>Models</td></tr><tr><td>Bolz et al. [17]</td><td>p</td><td>p</td><td>✓</td><td>91 295</td><td>2 079</td><td>✓1</td><td>p2</td><td>Transformer, LLM</td></tr><tr><td>Hu et al. [16]</td><td>♢(5 050)</td><td>✓</td><td>p</td><td>4 674 822</td><td>709</td><td>✓</td><td>p5</td><td>Tree, Logit, Neural Net</td></tr><tr><td>Mirtaheri et al. [13]</td><td>♢(1 557)</td><td>✓</td><td>✓</td><td>195 576</td><td>62 850</td><td>✓3</td><td>p5</td><td>Support Vector Machine</td></tr><tr><td>La Morgia et al. [18]</td><td>p</td><td>✓</td><td>p</td><td>—</td><td>900</td><td>✓</td><td>p5</td><td>Tree</td></tr><tr><td>Clough and Edwards</td><td>p</td><td>✓</td><td>p</td><td>10 687</td><td>10 687</td><td>p4</td><td>p5</td><td>Statistical analysis</td></tr><tr><td>[9]</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>This paper</td><td>✓</td><td>✓</td><td>✓</td><td>283 017</td><td>2 246</td><td>✓</td><td>✓</td><td>Tree, Transformer, LLM</td></tr></table></div>
 <blockquote>
 <p>1 Labels messages into 6 classes; 2 No extraction accuracy reported; dictionaries and regular expressions. </p>
@@ -84,7 +84,7 @@
 <p>Instead, we sort windows by the timestamp of their <em>latest</em> message and take the earliest 60% for training, the next 20% for validation, and the most recent 20% for testing. This ensures that no message contained in a validation or test window has appeared in the training data and mirrors real-world deployment, where an artificial-intelligence model is trained on past data and then used to detect future pump starts. Windows that cross a split boundary (contain messages on both sides of the split) are assigned to the later split to prevent message-level leakage. The number of such windows is negligible. </p>
 <p><em>a) Model Selection Rationale:</em> Model selection was guided by complementary strengths and by input-length constraints. We include LightGBM for its competitive efficiency in real-time detection, and BGE-M3 and Longformer (LED) </p>
 </section>
-<section aria-label="PDF page 4" class="source-page" id="fulltext-page-4"><p class="page-source"><a href="paper.pdf#page=4">PDF page 4</a></p>
+<section class="source-page" id="fulltext-page-4">
 <p>for their ability to handle long-context inputs. For extraction, we retain a rule-based method as a prior-work baseline and evaluate LLMs as strong prompt-based extraction models. Long-context support is necessary because windows are built from 11 messages, and approximately 35% of these windows exceed the standard 512-token limit. </p>
 <p><em>3) Pump-announcement Detection:</em> </p>
 <p><em>a) Feature representation:</em> Window texts are transformed into TF–IDF vectors over unigrams and bigrams, a common feature representation in natural language processing for text classification. </p>
@@ -109,7 +109,7 @@
 <p>2https://api.deepseek.com </p>
 <p>4https://platform.openai.com/docs/models/gpt-4.1 </p>
 </section>
-<section aria-label="PDF page 5" class="source-page" id="fulltext-page-5"><p class="page-source"><a href="paper.pdf#page=5">PDF page 5</a></p><p>TABLE III: Pump-start classification performance on the test set. Metrics are for the minority "Pump" class. Time values represent inference latency in seconds per sample. </p>
+<section class="source-page" id="fulltext-page-5"><p>TABLE III: Pump-start classification performance on the test set. Metrics are for the minority "Pump" class. Time values represent inference latency in seconds per sample. </p>
 <div aria-label="Table from PDF page 5" class="table-scroll" role="region" tabindex="0"><table class="article-table"><tr><th>Method</th><th>F1</th><th>Precision</th><th>Recall</th><th>Time</th></tr><tr><td>LightGBM</td><td>0.79</td><td>0.71</td><td>0.88</td><td>9.4×10−6</td></tr><tr><td>BGE-M3</td><td>0.83</td><td>0.89</td><td>0.78</td><td>0.05</td></tr><tr><td>LLM (GPT)</td><td>0.65</td><td>0.68</td><td>0.62</td><td>0.6</td></tr></table></div>
 <p>After reviewing all the messages, 2,246 pump announcements—fewer than 1% of all—were manually identified and labeled. In addition, 140 pump events were labeled as cancelled based on moderator messages. In total, 604 different cryptocurrency tickers and 14 different cryptocurrency exchanges are targeted. For each manually identified pump announcement, the targeted cryptocurrency and exchange were manually extracted. Throughout the dataset, some cryptocurrencies are targeted up to 40 times. </p>
 <p>Temporal patterns reveal that around 70% of pump announcements occur between 15:00 and 17:00 UTC, and nearly 40% take place on weekends (Saturdays and Sundays). This finding is in line with previous research [5]. The first labeled pump announcement in the dataset occurred in June 2017, and the most recent one in April 2023. </p>
@@ -125,7 +125,7 @@
 <p>Given the similar <em>F</em> 1 scores, the low latency and higher recall of LightGBM make it a more practical first-line detector. In this case, a simple tree-based machine-learning model (LightGBM) is therefore preferable to the slower deep-learning model (BGEM3) for pump-and-dump surveillance on Telegram. In addition to <em>F</em> 1 scores, the LightGBM and BGE-M3 detectors achieve ROC–AUC values of approximately 0.91 and 0.92, respectively, indicating stable performance across decision thresholds. </p>
 <p>We also evaluate two context constructions: symmetric ( <em>offline</em> ) windows, which include both past and future messages around the target message, and trailing ( <em>online</em> ) windows, which include only past/current messages. Ablations over window size (3/7/11) and TF-IDF dimensionality (10k/15k/20k) show that size 3 underperforms ( <em>F</em> 1 <em>≈</em> 0 <em>.</em> 64–0 <em>.</em> 70), while sizes 7– 11 perform best ( <em>F</em> 1 <em>≈</em> 0 <em>.</em> 79–0 <em>.</em> 82), with the top setting at symmetric size 11 and 20k features ( <em>F</em> 1 =0 <em>.</em> 820). </p>
 <p>We also experimented with LLMs for pump-start detection, reaching a balanced accuracy of 0.73 in 0.6s/window. However, performance proved volatile—accuracy significantly varied depending on the specific LLM and prompt used. The combined cost, latency, and unpredictability make LLMs impractical as first-line detectors at scale; instead, we reserve them for the <em>≈</em> 1% of windows flagged by our lightweight machine-learning model. It is worth noting that while newer generations of LLMs will undoubtedly improve in speed and capabilities, the performance gap we observe here is structural. The latency difference between LightGBM (microseconds) and LLMs (seconds or milliseconds) spans several orders of magnitude. Even if future LLMs become significantly faster, they are unlikely to match the throughput of a lightweight tree-based </p></section>
-<section aria-label="PDF page 6" class="source-page" id="fulltext-page-6"><p class="page-source"><a href="paper.pdf#page=6">PDF page 6</a></p>
+<section class="source-page" id="fulltext-page-6">
 <p>model. Consequently, the architectural choice of using a specialized, supervised model for first-line filtration remains valid regardless of incremental advancements in generative AI. </p>
 <p><em>a) Cross-Validation Robustness:</em> To assess robustness, we performed a time-ordered 5-fold cross-validation for LightGBM across three feature counts and three random seeds (45 runs total). Recall remained stable, with mean recall of 0.87 and standard deviation below 0.04 across all 5-fold configurations. </p>
 <p><em>b) Event-Level Detection Delay:</em> We also measured event-level detection delay. The detector identifies 88.8% of pump announcements exactly at the announcement message (0-message delay), and 91.6% within five messages. This indicates that practical end-to-end alert latency is primarily constrained by inference speed, which we already report. </p>
@@ -144,7 +144,7 @@
 <p><em>a) LLM Stability:</em> To assess extraction stability, we repeated GPT-based extraction under the same setup and observed very low variability, with joint-accuracy standard deviation below 0.003. </p>
 <p><em>1) Error Analysis:</em> Despite the strong performance of LLMs, errors still occur. Out of 420 test samples, Gemini correctly extracted both the cryptocurrency and the exchange in 90.7% of cases. We manually analyzed the 39 failure cases to identify </p>
 </section>
-<section aria-label="PDF page 7" class="source-page" id="fulltext-page-7"><p class="page-source"><a href="paper.pdf#page=7">PDF page 7</a></p>
+<section class="source-page" id="fulltext-page-7">
 <p>their causes. Extraction mistakes arise from a set of ambiguities. First, the predictions and labels can refer to closely related but not identical entities (e.g., Binance vs. Binance Futures). Second, the manually annotated labels may be written slightly differently than the predictions (e.g., gateio vs. gate.io). These are often genuine ambiguities where both forms are plausible depending on context. Third, several windows contain multiple pumps, and the LLM may extract a different pump than the one (i.e., the first pump) identified by the annotator. Fourth, errors arise when the exchange is not mentioned directly in the analyzed window but is implied from prior messages, pinned posts, or the group name. </p>
 <p>Errors also occur when non-pump cryptocurrencies or exchanges are mentioned alongside the true pump target, misleading the LLM. In rare cases, the cryptocurrency ticker is entirely absent from the text (e.g., shown only in an image). Addressing these errors would increase the reported accuracy even further, and is possible through additional preprocessing of the data or by using different prompts. </p>
 <p>In summary, while simple heuristics may occasionally extract exchange mentions, they fail to handle ambiguity. Accurate cryptocurrency extraction, in particular, requires deep contextual understanding. LLMs provide this capability and remain feasible for deployment given the limited number of announcements requiring extraction. However, to maximize their effectiveness, attention should be given to the design of preprocessing steps and the formulation of prompts, both of which can influence extraction quality in ambiguous cases. </p>
@@ -165,7 +165,7 @@
 <h3><em>E. Mitigation and Applications</em></h3>
 <p>A deployed system based on this pipeline supports several mitigation strategies. Exchanges can use alerts to monitor suspicious activity, investors can be warned about manipulation attempts, and regulators or platform operators can use records of coordination behavior for further investigation. By focusing on explicit coordination messages rather than price prediction, </p>
 </section>
-<section aria-label="PDF page 8" class="source-page" id="fulltext-page-8"><p class="page-source"><a href="paper.pdf#page=8">PDF page 8</a></p>
+<section class="source-page" id="fulltext-page-8">
 <p>the system provides early evidence of manipulation intent and complements market-based surveillance tools that monitor market data. </p>
 <p>Overall, this deployment-oriented design shows that the proposed methods provide a practical and scalable foundation for real-time detection, analysis, and mitigation of socialmedia-driven market manipulation. </p>
 <p>how manipulators attempt to evade detection could inform more robust, continuously learning systems. While our LightGBM classifier achieves strong performance ( <em>F</em> 1=0.79), false positives (29%) and missed pumps (12%) remain. Future work could analyze these errors and utilize hybrid pipelines that apply more accurate but slower models only to ambiguous cases. </p>
@@ -185,7 +185,7 @@
 <li>[1] F. Eigelshoven, A. Ullrich, and D. Parry, “Cryptocurrency market manipulation - A systematic literature review,” in <em>ICIS</em> . Association for Information Systems, 2021. </li>
 </ul>
 </section>
-<section aria-label="PDF page 9" class="source-page" id="fulltext-page-9"><p class="page-source"><a href="paper.pdf#page=9">PDF page 9</a></p>
+<section class="source-page" id="fulltext-page-9">
 <ul>
 <li>
 <p>[2] L. Nizzoli, S. Tardelli, M. Avvenuti, S. Cresci, M. Tesconi, and E. Ferrara, “Charting the landscape of online cryptocurrency manipulation,” <em>IEEE Access</em> , vol. 8, pp. 113 230–113 245, 2020. </p>

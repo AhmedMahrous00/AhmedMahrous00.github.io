@@ -1,10 +1,20 @@
-import json, html
+import json, html, re
 from pathlib import Path
 root=Path(__file__).parent
 papers=json.loads((root/'publications.json').read_text())
 abstracts=json.loads((root/'abstracts.json').read_text())
 (root/'publications.json').write_text(json.dumps(papers,indent=2)+'\n')
 e=html.escape
+def clean_reading_text(fragment):
+ # Keep article content and actual figure captions; omit conversion scaffolding.
+ fragment=re.sub(r'<p class="page-source">.*?</p>', '', fragment, flags=re.S)
+ fragment=re.sub(r'<details class="text-transcription">.*?</details>', lambda match: ''.join(re.findall(r'<figure\b.*?</figure>', match.group(0), flags=re.S)), fragment, flags=re.S)
+ fragment=re.sub(r'<figcaption><a href="paper\.pdf#page=\d+">(?:Mathematical passage|Passage with inline symbols), PDF page \d+</a></figcaption>', '', fragment)
+ fragment=re.sub(r' aria-label="PDF page \d+"', '', fragment)
+ # Two caption glyphs were checked against the original papers.
+ fragment=fragment.replace('1/<sup>[unmapped symbol]</sup> <em>i</em><sup><em>p</em></sup> <em>i</em><sup>2, where</sup><sup>_pi_is the relative frequency</sup>', '1/(∑<sub>i</sub> <em>p</em><sub>i</sub><sup>2</sup>), where <em>p</em><sub>i</sub> is the relative frequency')
+ fragment=fragment.replace('✓=Yes; [unmapped symbol]=No; ♢=Partial', '✓=Yes; ✗=No; ♢=Partial')
+ return fragment
 def author_names(p):
  return p['authors'].replace(', and ', ', ').replace(' and ', ', ').split(', ')
 def bibtex(p):
@@ -35,7 +45,6 @@ def citation_html(p):
  result='<section id="citation"><h2>Citation</h2><p>'+e(text)
  if b.get('doi'):result+=' <a href="https://doi.org/'+e(b['doi'])+'">doi:'+e(b['doi'])+'</a>.'
  result+='</p>'
- if b.get('note'):result+='<p>'+e(b['note'])+'.</p>'
  return result+'<p><a href="citation.bib" download>Download .bib</a></p><pre>'+e(bibtex(p))+'</pre></section>'
 def author_html(text):
  return e(text).replace("Roberto Di Pietro", '<a href="https://cemse.kaust.edu.sa/profiles/roberto-di-pietro">Roberto Di Pietro</a>')
@@ -70,9 +79,9 @@ cv+='</ol>'+teaching+footer
 (root/'docs/cv.html').write_text(page('Ahmed Mahrous — CV',cv))
 for p in papers:
  out=root/'docs/papers'/p['slug'];out.mkdir(parents=True,exist_ok=True)
- fulltext=(root/'content'/(p['slug']+'.html')).read_text()
+ fulltext=clean_reading_text((root/'content'/(p['slug']+'.html')).read_text())
  abstract='<section class="abstract" id="abstract"><h2>Abstract</h2>'+''.join('<p>'+e(para)+'</p>' for para in abstracts[p['slug']].split('\n\n'))+'</section>'
- body='<p><a href="../../#research">← Ahmed Mahrous’s homepage</a></p><main><article><header><h1>'+e(p['title'])+'</h1><p>'+author_html(p['authors'])+'</p><p><em>'+e(p['venue'])+'</em> · '+p['year']+'</p>'+paper_links(p,on_paper=True)+'</header><section id="tldr"><h2>TL;DR</h2><p>'+e(p['summary'])+'</p></section>'+abstract+citation_html(p)+'<section id="full-text"><h2>Full text</h2><p class="version-note">HTML reading edition transcribed from the linked PDF; this may be an author manuscript rather than the publisher-formatted version. See the <a href="paper.pdf">PDF</a> for the original page layout and mathematical notation. '+('The final published citation is provided above.' if p['citation'].get('doi') else 'Accepted manuscript; final proceedings details will be added when available.')+'</p><div class="paper-body">'+fulltext+'</div></section></article></main>'+footer
+ body='<p><a href="../../#research">← Ahmed Mahrous’s homepage</a></p><main><article><header><h1>'+e(p['title'])+'</h1><p>'+author_html(p['authors'])+'</p><p><em>'+e(p['venue'])+'</em> · '+p['year']+'</p>'+paper_links(p,on_paper=True)+'</header><section id="tldr"><h2>TL;DR</h2><p>'+e(p['summary'])+'</p></section>'+abstract+citation_html(p)+'<section id="full-text"><h2>Full text</h2><div class="paper-body">'+fulltext+'</div></section></article></main>'+footer
  (out/'index.html').write_text(page(p['title']+' — Ahmed Mahrous',body,'../../'))
  (out/'citation.bib').write_text(bibtex(p))
 (root/'docs/publications.bib').write_text('\n'.join(bibtex(p) for p in papers))
