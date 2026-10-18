@@ -1,0 +1,138 @@
+{
+  "slug": "pumpsense",
+  "format": "native-html",
+  "source_url": "https://arxiv.org/html/2605.09431v1",
+  "source_tex_url": "https://arxiv.org/src/2605.09431v1",
+  "source_pdf_path": "docs/papers/pumpsense/paper.pdf",
+  "source_pdf_sha256": "cae5758d4331a873cc0ad761b814e28dd0a41491a1bcd236630b5807b2579929",
+  "source_pdf_pages": 9,
+  "source_html_sha256": "1db95ab36aea54546bd0544d64fada6f2ac1466ff8e76fdd1f890937840c17d5",
+  "output_sha256": "251a6fed66be91f2ee6eb8bf3b0cf58358d479340f5cce3c71f281bc128d3ecd",
+  "source_headings": [
+    "I Introduction",
+    "II Background and Related Work",
+    "II-A Background",
+    "II-B Prior Approaches",
+    "Gaps in Prior Work",
+    "III Data and Methodologies",
+    "III-A Data Collection and Annotation",
+    "III-B Methodologies",
+    "III-B 1 Problem Formulation",
+    "III-B 2 Data Preparation",
+    "Model Selection Rationale",
+    "III-B 3 Pump-announcement Detection",
+    "Feature representation",
+    "Baseline Classifier",
+    "Deep-learning Classifier",
+    "III-B 4 Target Information Extraction",
+    "Rule-Based Baseline Extractor",
+    "Deep-learning Extractor",
+    "DeepSeek LLM",
+    "Gemini LLM",
+    "GPT LLM",
+    "Evaluation",
+    "IV Results",
+    "IV-A Dataset Stylized Facts",
+    "IV-B Detection",
+    "Cross-Validation Robustness",
+    "Event-Level Detection Delay",
+    "IV-C Extraction",
+    "LLM Stability",
+    "IV-C 1 Error Analysis",
+    "V Ethical Compliance",
+    "VI Practical Deployment and Surveillance Pipeline",
+    "VI-A Discovery of Pump-Organizing Groups",
+    "VI-B Continuous Monitoring and First-Line Detection",
+    "VI-C Confirmation and Information Extraction",
+    "VI-D Human-in-the-Loop Verification and Dataset Expansion",
+    "VI-E Mitigation and Applications",
+    "VII Limitations and Future Work",
+    "VIII Conclusion",
+    "Code and Data Availability",
+    "References"
+  ],
+  "source_section_count": 41,
+  "native_section_count": 42,
+  "source_reference_count": 29,
+  "section_headings_unchanged": true,
+  "added_notes_section": true,
+  "footnote_count": 4,
+  "body_word_count": 7414,
+  "mathml_count": 51,
+  "table_count": 5,
+  "reference_count": 29,
+  "figure_asset_count": 3,
+  "pdf_crop_count": 0,
+  "assets": [
+    {
+      "file": "Pump_Dump.png",
+      "source_url": "https://arxiv.org/html/2605.09431v1/fig/Pump_Dump.png",
+      "alt": "Fig. 1 : Left: Telegram group announcements regarding a pump-and-dump scheme targeting the GMT coin on Poloniex exchange. Right: the impact of the announcements on the price of the manipulated GMT coin on the Poloniex exchange.",
+      "sha256": "77f78527603bc480dd948b44442be81e8bc9426a599f304e799697c99e68e121",
+      "bytes": 339826
+    },
+    {
+      "file": "lightgbm_confusion_matrix.png",
+      "source_url": "https://arxiv.org/html/2605.09431v1/lightgbm_confusion_matrix.png",
+      "alt": "(a) Confusion matrix for LightGBM",
+      "sha256": "40bcdaf9356ffac963f960938afb211159d5b11596b0a3373635c84828484be8",
+      "bytes": 28037
+    },
+    {
+      "file": "bge_confusion_matrix.png",
+      "source_url": "https://arxiv.org/html/2605.09431v1/bge_confusion_matrix.png",
+      "alt": "(b) Confusion matrix for BGE",
+      "sha256": "3cd01bb3a36f846e31a50931887cc38de57132f38604da24c99c3ef3466272e1",
+      "bytes": 28359
+    }
+  ],
+  "pdf_page_text_coverage": [
+    {
+      "page": 1,
+      "five_word_sequence_coverage": 0.5827
+    },
+    {
+      "page": 2,
+      "five_word_sequence_coverage": 0.7826
+    },
+    {
+      "page": 3,
+      "five_word_sequence_coverage": 0.7983
+    },
+    {
+      "page": 4,
+      "five_word_sequence_coverage": 0.8694
+    },
+    {
+      "page": 5,
+      "five_word_sequence_coverage": 0.8919
+    },
+    {
+      "page": 6,
+      "five_word_sequence_coverage": 0.9679
+    },
+    {
+      "page": 7,
+      "five_word_sequence_coverage": 0.9581
+    },
+    {
+      "page": 8,
+      "five_word_sequence_coverage": 0.9391
+    },
+    {
+      "page": 9,
+      "five_word_sequence_coverage": 0.5075
+    }
+  ],
+  "native_body_five_word_sequences_present_in_pdf": 0.8958,
+  "fidelity_verdict": "Original source-based body matches linked PDF section structure, reference count, and figure/table captions. Native HTML preserves equations with TeX annotations and all references. Figures are standalone original plot assets, not page crops. Site publication metadata and abstract remain canonical.",
+  "reviewed_repairs": [
+    "Font Awesome check/cross icons replaced with accessible Unicode symbols; thin-space thousands separators in Table II normalized to 283,017 and 2,246, verified from linked PDF; extraneous trailing citation removed; four footnotes normalized to linked Notes list."
+  ],
+  "fidelity_limits": [
+    "Published PDF and arXiv bibliography use different reference ordering/formatting; all source references and linked citation targets are retained. Original chart labels remain within the original figure assets."
+  ],
+  "notes": [
+    "Source conversion includes live in-page reference links. arXiv reference backlink boilerplate removed."
+  ]
+}

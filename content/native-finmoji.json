@@ -1,0 +1,135 @@
+{
+  "slug": "finmoji",
+  "mode": "native-html",
+  "html_source": "https://arxiv.org/html/2605.09469v1",
+  "tex_source": "https://arxiv.org/src/2605.09469v1",
+  "source_tex_file": "emojiPaper.tex",
+  "source_pdf": "docs/papers/finmoji/paper.pdf",
+  "source_pdf_sha256": "c2b9313c636da7d64b7ea9cea57eb813eb08e5b14a026be15995f796925f7edc",
+  "source_pdf_pages": 31,
+  "mathml_count": 43,
+  "equation_count": 4,
+  "table_count": 11,
+  "bibliography_count": 70,
+  "emoji_count": 69,
+  "assets": [
+    {
+      "path": "docs/papers/finmoji/figures/PostsByYear.webp",
+      "original": "figures/PostsByYear.png",
+      "sha256": "b9e4ba956d2f315cfc4a5819644114772399737a5f9a2fc70778cea50d89e659"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/mergedPiesArrows.webp",
+      "original": "figures/mergedPiesArrows.png",
+      "sha256": "ef0fd0acb0a0ae72983f1fb5ffb8eb17aaf0c1f897a36d281a7d2063624bdd6a"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/StockTwitsDemographics.webp",
+      "original": "figures/StockTwitsDemographics.png",
+      "sha256": "d4741f46e4dcc3be12707a28b3ad6dede751b7584d8cde697a892d99e9c74b73"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/newOverview.svg",
+      "original": "figures/newOverview.pdf",
+      "sha256": "3f48b43dfa2f5de04d3f3feb168d3426e513833dd8e78bfeac20daf0651b5a25"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/numEmojisDist.webp",
+      "original": "figures/numEmojisDist.png",
+      "sha256": "b01bf24f5603993d4228ba9e89947cd80c6879ed9bc24ef13e51a8565444d65d"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/avgEmojiPerPost.webp",
+      "original": "figures/avgEmojiPerPost.png",
+      "sha256": "055c913a5034ca763a1e57f2679f9c602aad5ebb999b7fa285b6c31b7d5a825d"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/bullishCloud.webp",
+      "original": "figures/bullishCloud.png",
+      "sha256": "a7a1169ca8fe401703b3861efb7be913dd9635d9f12faa5344abd614b542575f"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/bearishCloud.webp",
+      "original": "figures/bearishCloud.png",
+      "sha256": "6efa6005951b730459826441240f4bac69bbe0ef2047ceb70407855a1309e6b3"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/emojiCloudGrey.webp",
+      "original": "figures/emojiCloudGrey.png",
+      "sha256": "c8a70c1fcf82bc78856552f6a1447fd76b5e68666d2cf99725f96f2ccbdf4215"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/twitter_cloud.webp",
+      "original": "figures/twitter_cloud.png",
+      "sha256": "488f36cf4f0b2cab7212d494fb635b07f68188ca415cc9c31c9374b2255410d6"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/stocktwits_cloud.webp",
+      "original": "figures/stocktwits_cloud.png",
+      "sha256": "3d586d462d7df577f1ab5b3af7056d7c3bcec107e82008f92480f190f88f1387"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/emojiScoreInd.webp",
+      "original": "figures/emojiScoreInd.png",
+      "sha256": "1c2c1210119241ed5ec6b86fd1d6dd93e2f742fedb39e20e71eb414e839faf98"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/emojiScoresPairs.webp",
+      "original": "figures/emojiScoresPairs.png",
+      "sha256": "bcd226914b705a29a24d25cf2023d23a0ba9a91ce15d974586e2812499e4737a"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/numEmojis.webp",
+      "original": "figures/numEmojis.png",
+      "sha256": "ccf68d8ba19535de2cbcd938a8045534e3df51d1858a7289bc45c40d0abe1f1e"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/emojiLR_CM.svg",
+      "original": "figures/emojiLR_CM.pdf",
+      "sha256": "27fda2611161cc87d18a437ffc0bb5644d9cc6f9634f3cc99c083db3c2fe2c59"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/textOnlyLR_CM.svg",
+      "original": "figures/textOnlyLR_CM.pdf",
+      "sha256": "452dff0143670407e85ac845722057a314a9741664cfc42795c77ecbc3051990"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/TextAndEmojiLR_CM.svg",
+      "original": "figures/TextAndEmojiLR_CM.pdf",
+      "sha256": "cd24494717a3ef27fd2ed9b328a04706c5a2638f1a5e88cba1af581c268753ef"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/sampleSizeLR.webp",
+      "original": "figures/sampleSizeLR.png",
+      "sha256": "e9d3979f70b51ddf32285ae4269359b748c2ef2c9379b0528ca1683049da2d58"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/emojiTR_CM.svg",
+      "original": "figures/emojiTR_CM.pdf",
+      "sha256": "887c9b421291a0a2dbfa0f6f18ac2adc0b149ba8fbfd0455342ba0b27fdaaa9e"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/textOnlyTR_CM.svg",
+      "original": "figures/textOnlyTR_CM.pdf",
+      "sha256": "ef027d7c5b3261af15e0786b8c8c7b9f4fb19860c3e11827246cf62207504be0"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/TextAndEmojiTR_CM.svg",
+      "original": "figures/TextAndEmojiTR_CM.pdf",
+      "sha256": "cd7451b59c27ee493bb3c643277b6c484dee7d1aa358432ba2d0036a5e035f53"
+    },
+    {
+      "path": "docs/papers/finmoji/figures/sampleSizeTR.webp",
+      "original": "figures/sampleSizeTR.png",
+      "sha256": "8dcc638b77bf1ff9a2332eb77256ceb35a982e5f0b18448da1540dc5d90183ef"
+    }
+  ],
+  "fidelity": "Scientific body, appendices, references, equations and tables preserved from original arXiv HTML, with emoji positions verified against the TeX source and original figure assets. Linked PDF has the same paper body; citation typography and page layout differ.",
+  "limitations": [],
+  "validation": {
+    "paragraphs_compared": 123,
+    "median_five_word_sequence_overlap_with_pdf": 1.0,
+    "decimal_table_values_checked": 144,
+    "decimal_values_absent_from_linked_pdf": []
+  }
+}

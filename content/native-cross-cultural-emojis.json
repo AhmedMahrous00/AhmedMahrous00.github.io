@@ -1,0 +1,55 @@
+{
+  "slug": "cross-cultural-emojis",
+  "mode": "native-html",
+  "html_source": "https://arxiv.org/html/2605.09414v1",
+  "tex_source": "https://arxiv.org/src/2605.09414v1",
+  "source_tex_file": "main.tex",
+  "source_pdf": "docs/papers/cross-cultural-emojis/paper.pdf",
+  "source_pdf_sha256": "82e835d2c5c3821b1af2bf3bc0cbb59e372abe18b4b698b68fc834fae9dddcb2",
+  "source_pdf_pages": 18,
+  "mathml_count": 59,
+  "equation_count": 0,
+  "table_count": 15,
+  "bibliography_count": 43,
+  "emoji_count": 39,
+  "assets": [
+    {
+      "path": "docs/papers/cross-cultural-emojis/figures/box_modality.svg",
+      "original": "figures/box_modality.pdf",
+      "sha256": "ca030b11a4f9793373f78104613f4f21664a15a53871347ee34328838305a0ec"
+    },
+    {
+      "path": "docs/papers/cross-cultural-emojis/figures/box_regime.svg",
+      "original": "figures/box_regime.pdf",
+      "sha256": "87615beda38de1b44d1e0971859bbf7ca7c3fc20c3dda1cbaceb03236956bbc4"
+    },
+    {
+      "path": "docs/papers/cross-cultural-emojis/figures/box_model.svg",
+      "original": "figures/box_model.pdf",
+      "sha256": "e017da300728bb9a39ba71535851fc47ce23133256e952926d2ab658e47ceb63"
+    },
+    {
+      "path": "docs/papers/cross-cultural-emojis/figures/agreement_matrix_acm_bw_bold.svg",
+      "original": "figures/agreement_matrix_acm_bw_bold.pdf",
+      "sha256": "43d026071c8646fdd0559eec1843d90292a2d98821037b46af821adb95a18aa9"
+    },
+    {
+      "path": "docs/papers/cross-cultural-emojis/figures/usage_panel.svg",
+      "original": "figures/usage_panel.pdf",
+      "sha256": "9db95c7bc4a4647661eec351050125fbbf5c988eeeb617b772a7afab525dd35a"
+    },
+    {
+      "path": "docs/papers/cross-cultural-emojis/figures/polarity_panel.svg",
+      "original": "figures/polarity_panel.pdf",
+      "sha256": "cfd84b72e14ab80345edaa0b8a8254b72631778f9a2fa8a8551beac08d626768"
+    }
+  ],
+  "fidelity": "Scientific body, appendices, references, equations and tables preserved from original arXiv HTML, with emoji positions verified against the TeX source and original figure assets. Linked PDF has the same paper body; citation typography and page layout differ.",
+  "limitations": [],
+  "validation": {
+    "paragraphs_compared": 96,
+    "median_five_word_sequence_overlap_with_pdf": 1.0,
+    "decimal_table_values_checked": 407,
+    "decimal_values_absent_from_linked_pdf": []
+  }
+}

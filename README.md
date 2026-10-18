@@ -6,7 +6,7 @@ Static academic website published using GitHub Pages at https://amahrous.com/.
 
 Edit `publications.json` for metadata and TL;DR summaries, `abstracts.json` for complete author-written abstracts, and `build.py` for the profile and layout. Each paper's PDF lives at `docs/papers/<slug>/paper.pdf`, beside its HTML page and `citation.bib`. `pdf_source` records the original public source. Historical `/pdfs/<slug>.pdf` links remain available.
 
-`content/<slug>.html` contains the full-text HTML reading edition, transcribed from the corresponding PDF. Equations and figures retain source images; source-page links point back to the PDF. Published DOIs identify the cited version; author-manuscript content is labeled separately.
+`content/<slug>.html` contains the complete article body. Where original LaTeX-derived HTML is available, equations use MathML, tables use HTML, and figures use the original artwork. A `content/native-<slug>.json` manifest records the source and conversion checks. The remaining articles use PDF-derived text with exact extracts for content that cannot be faithfully reconstructed. Published metadata and citations are maintained separately from the article body.
 
 Rebuild pages:
 
@@ -14,6 +14,8 @@ Rebuild pages:
 python3 build.py
 ```
 
-To regenerate full text after replacing a manuscript, install `requirements.txt`, run `python3 scripts/extract_fulltext.py`, check the output against the PDF, and rebuild. Verify abstracts separately after a manuscript change.
+To regenerate PDF-derived full text after replacing a manuscript, install `requirements.txt`, run `python3 scripts/extract_fulltext.py` for the affected paper, check the output against the PDF, and rebuild. Do not overwrite native HTML fragments with PDF extraction. Use `python3 scripts/native_stable_pump.py` for Stablecoins and PumpSense. For FinMoji and the cross-cultural article, prepare a cache directory containing `<slug>.html` downloaded from each manifest's `html_source` and an extracted `<slug>/` folder downloaded from `tex_source`, then run `python3 scripts/build_native_emoji_articles.py <cache-directory>`. Verify abstracts separately after a manuscript change.
+
+Run `python3 scripts/check_site.py` before publishing to verify article content, equations, citations, figures, and local links.
 
 Commit the updated source and `docs/` files. GitHub Pages deploys branch **main**, folder **/docs**.

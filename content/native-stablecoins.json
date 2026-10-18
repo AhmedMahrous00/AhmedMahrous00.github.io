@@ -1,0 +1,273 @@
+{
+  "slug": "stablecoins",
+  "format": "native-html",
+  "source_url": "https://arxiv.org/html/2507.13883v1",
+  "source_tex_url": "https://arxiv.org/src/2507.13883v1",
+  "source_pdf_path": "docs/papers/stablecoins/paper.pdf",
+  "source_pdf_sha256": "7a335cf609a1b23d460bcf2e600e91d8349008e569d305932c49bc5782a134c0",
+  "source_pdf_pages": 35,
+  "source_html_sha256": "bd6ec9e9893f4935d751a0190d336208fdda5220aaf4c12f01bbf990501ba6e0",
+  "output_sha256": "f786a970c3823deb65b662993def69bdd5cae483744d99c704212b5b3dfdd610",
+  "source_headings": [
+    "I Introduction",
+    "II Related Work",
+    "III Methodology, Categorization, and Objectives",
+    "IV Economic Analysis",
+    "IV-A Stablecoin Price/Volume Correlation With Other Factors",
+    "IV-B Stablecoin Usage and Adoption",
+    "IV-C Stablecoin Stability Analysis",
+    "IV-D Price Modeling",
+    "V Technical Analysis",
+    "V-A Design And Implementation",
+    "V-B Stablecoin Mechanisms",
+    "V-C Failure Analysis",
+    "V-D Security And Privacy",
+    "VI Position and Policy Papers",
+    "VI-A Position Papers Providing an Overview of Stablecoins and their Implications",
+    "VI-B Legal and Regulatory",
+    "VII Discussion",
+    "VII-A Research Trends",
+    "VII-B Other Research Gaps and Conflicting Results",
+    "VII-C Stablecoin and CBDC adoption",
+    "VII-D Data Types",
+    "VIII Conclusion",
+    "References"
+  ],
+  "source_section_count": 23,
+  "native_section_count": 23,
+  "source_reference_count": 213,
+  "section_headings_unchanged": true,
+  "added_notes_section": false,
+  "footnote_count": 0,
+  "body_word_count": 35323,
+  "mathml_count": 6,
+  "table_count": 3,
+  "reference_count": 213,
+  "figure_asset_count": 10,
+  "pdf_crop_count": 0,
+  "assets": [
+    {
+      "file": "stablecoin_papers_by_year.svg",
+      "source_url": "https://arxiv.org/html/2507.13883v1/stablecoin_papers_by_year.svg",
+      "alt": "Figure 1: Number of papers per year for each macro-category. The data for 2024 are updated as of the time of our search query, conducted in September 2024.",
+      "sha256": "eb6f121a82b7a0839a625e7070601e4f5c70fc0aa9ebfa7aaa9dc27f91def77c",
+      "bytes": 70196
+    },
+    {
+      "file": "usdt_vs_assets_horizontal_strip.svg",
+      "source_url": "https://arxiv.org/html/2507.13883v1/usdt_vs_assets_horizontal_strip.svg",
+      "alt": "Figure 2: Scatter plots of USDT daily returns against BTC, S&P 500, USDC, and gold from 2020 to 2025. Each plot includes a fitted linear regression line. Data was sourced from Yahoo Finance API .",
+      "sha256": "2d588526cecd5bb8cd03351b55938e686841165796cfe1d79382f114c7de0777",
+      "bytes": 5188678
+    },
+    {
+      "file": "btc_usdt.svg",
+      "source_url": "https://arxiv.org/html/2507.13883v1/btc_usdt.svg",
+      "alt": "Figure 3: Daily BTC price and USDT circulating supply (in billions of USD) from 2020 to 2025. Data was sourced from CoinDesk API .",
+      "sha256": "e4b1bc5fb07ad82eeb323422306c6832c31006960c6a34cd179a0cbd157ff1e9",
+      "bytes": 62501
+    },
+    {
+      "file": "stablecoins_price_events.svg",
+      "source_url": "https://arxiv.org/html/2507.13883v1/stablecoins_price_events.svg",
+      "alt": "Figure 4: Time series of major stablecoin prices, with two crises annotated: Black Thursday (COVID-19 crash), and Silicon Valley Bank collapse.",
+      "sha256": "7ff3a3696006583370b20829efc48e40077f6cd58fb42295d3153b9a710bc3c4",
+      "bytes": 98236
+    },
+    {
+      "file": "impossible_trinity.svg",
+      "source_url": "https://arxiv.org/html/2507.13883v1/impossible_trinity.svg",
+      "alt": "Figure 5: The Impossible Trinity, or Trilemma, in international economics. It states that a country can simultaneously achieve at most two of the following three policy objectives at a given time—capital mobility, fixed exchange rate, and monetary policy autonomy.",
+      "sha256": "981f5122dec8e27a55d74262c7a6c6063d93847b65cf5f2c24ab196ff7276ffc",
+      "bytes": 21899
+    },
+    {
+      "file": "fig_stablecoins_svb.svg",
+      "source_url": "https://arxiv.org/html/2507.13883v1/fig_stablecoins_svb.svg",
+      "alt": "Figure 6: Minute-by-minute Prices of USDT and USDC during the SVB Crisis. Data was sourced from CoinDesk API .",
+      "sha256": "aba9e2d5fc14d8339dd6362f66a198be6e1556ddfc43c8213f944305e46ed65f",
+      "bytes": 71899
+    },
+    {
+      "file": "token.svg",
+      "source_url": "https://arxiv.org/html/2507.13883v1/token.svg",
+      "alt": "Figure 7: Structure of a dual-token stablecoin mechanism. Dual-token stablecoin mechanism based on overcollateralized ETH. A user deposits $1.50 in ETH to mint $1.00 of stablecoin and $0.50 of a secondary token. If ETH changes ±10% in value, the stablecoin maintains its peg while the secondary token absorbs the volatility, with leveraged exposure to collateral fluctuations. Stablecoin holders will be asked to liquidate if ETH drops by more than 33% because the value of the $1.50 collateral would fall below $1.00, making it insufficient to fully back the stablecoin.",
+      "sha256": "98c1da50449d90d18c1637308a5a3e6bc306bd376308f6498252bdc494f60e56",
+      "bytes": 97007
+    },
+    {
+      "file": "luna_ust_prices.svg",
+      "source_url": "https://arxiv.org/html/2507.13883v1/luna_ust_prices.svg",
+      "alt": "Figure 8: Minute-by-minute price movements of UST and LUNA during the Terra–Luna collapse in May 2022. Vertical lines indicate two key events: (a) May 7, 22:00: UST first depegs following a liquidity shock on Curve’s 3pool; intervention by the Luna Foundation Guard follows. (b) May 11, 10:00: Proposal 1164 is endorsed to increase LUNA minting capacity in an attempt to restore the peg. Data sourced from Binance API .",
+      "sha256": "424d3457a7aa103ee5857dffff2c204c21409bbfb54bfc881b2dfc41615eb498",
+      "bytes": 106371
+    },
+    {
+      "file": "mktCap.svg",
+      "source_url": "https://arxiv.org/html/2507.13883v1/mktCap.svg",
+      "alt": "Figure 9: Market capitalization and market share of major stablecoins from 2021 to 2025. Data was sourced from CoinGecko API .",
+      "sha256": "2bce4495ed37ad44cc07a92c1e2cfef5597b6918b1a31c4c0e010b3ab4239e41",
+      "bytes": 81861
+    },
+    {
+      "file": "CBDC_map.svg",
+      "source_url": "https://arxiv.org/html/2507.13883v1/CBDC_map.svg",
+      "alt": "Figure 10: Global status of Central Bank Digital Currency (CBDC) projects. Countries are color-coded by project stage. Data was sourced from CBDC Tracker .",
+      "sha256": "5690bfc8de6d27d3e17a21010e53be0f4978f183e3b1746b9c89d280423599a9",
+      "bytes": 643115
+    }
+  ],
+  "pdf_page_text_coverage": [
+    {
+      "page": 1,
+      "five_word_sequence_coverage": 0.6953
+    },
+    {
+      "page": 2,
+      "five_word_sequence_coverage": 0.8892
+    },
+    {
+      "page": 3,
+      "five_word_sequence_coverage": 0.9325
+    },
+    {
+      "page": 4,
+      "five_word_sequence_coverage": 0.9784
+    },
+    {
+      "page": 5,
+      "five_word_sequence_coverage": 0.9845
+    },
+    {
+      "page": 6,
+      "five_word_sequence_coverage": 0.8415
+    },
+    {
+      "page": 7,
+      "five_word_sequence_coverage": 0.9422
+    },
+    {
+      "page": 8,
+      "five_word_sequence_coverage": 0.9633
+    },
+    {
+      "page": 9,
+      "five_word_sequence_coverage": 0.9946
+    },
+    {
+      "page": 10,
+      "five_word_sequence_coverage": 0.9863
+    },
+    {
+      "page": 11,
+      "five_word_sequence_coverage": 0.9155
+    },
+    {
+      "page": 12,
+      "five_word_sequence_coverage": 0.9897
+    },
+    {
+      "page": 13,
+      "five_word_sequence_coverage": 0.9709
+    },
+    {
+      "page": 14,
+      "five_word_sequence_coverage": 0.9203
+    },
+    {
+      "page": 15,
+      "five_word_sequence_coverage": 0.9666
+    },
+    {
+      "page": 16,
+      "five_word_sequence_coverage": 0.9794
+    },
+    {
+      "page": 17,
+      "five_word_sequence_coverage": 0.9671
+    },
+    {
+      "page": 18,
+      "five_word_sequence_coverage": 0.9677
+    },
+    {
+      "page": 19,
+      "five_word_sequence_coverage": 0.9795
+    },
+    {
+      "page": 20,
+      "five_word_sequence_coverage": 0.9752
+    },
+    {
+      "page": 21,
+      "five_word_sequence_coverage": 0.9494
+    },
+    {
+      "page": 22,
+      "five_word_sequence_coverage": 0.9781
+    },
+    {
+      "page": 23,
+      "five_word_sequence_coverage": 0.9547
+    },
+    {
+      "page": 24,
+      "five_word_sequence_coverage": 0.8786
+    },
+    {
+      "page": 25,
+      "five_word_sequence_coverage": 0.9648
+    },
+    {
+      "page": 26,
+      "five_word_sequence_coverage": 0.9656
+    },
+    {
+      "page": 27,
+      "five_word_sequence_coverage": 0.9741
+    },
+    {
+      "page": 28,
+      "five_word_sequence_coverage": 0.9621
+    },
+    {
+      "page": 29,
+      "five_word_sequence_coverage": 0.9684
+    },
+    {
+      "page": 30,
+      "five_word_sequence_coverage": 0.9665
+    },
+    {
+      "page": 31,
+      "five_word_sequence_coverage": 0.9583
+    },
+    {
+      "page": 32,
+      "five_word_sequence_coverage": 0.9728
+    },
+    {
+      "page": 33,
+      "five_word_sequence_coverage": 0.939
+    },
+    {
+      "page": 34,
+      "five_word_sequence_coverage": 0.9741
+    },
+    {
+      "page": 35,
+      "five_word_sequence_coverage": 0.8899
+    }
+  ],
+  "native_body_five_word_sequences_present_in_pdf": 0.9701,
+  "fidelity_verdict": "Original source-based body matches linked PDF section structure, reference count, and figure/table captions. Native HTML preserves equations with TeX annotations and all references. Figures are standalone original plot assets, not page crops. Site publication metadata and abstract remain canonical.",
+  "reviewed_repairs": [
+    "19 inline SVG checkmarks in Table I replaced with accessible Unicode checkmarks; 34 framed insight text boxes converted to ordinary HTML."
+  ],
+  "fidelity_limits": [
+    "Original chart labels remain within original SVG figure assets."
+  ],
+  "notes": [
+    "Source conversion includes live in-page reference links. arXiv reference backlink boilerplate removed."
+  ]
+}
