@@ -14,6 +14,6 @@ Commit the updated source and `docs/` files. In Settings → Pages, select **Dep
 
 Site: https://amahrous.com/
 
-Each publication can have a `pdf` URL pointing directly to a public PDF. These links open in a new tab from the homepage, CV, and individual paper pages. Keep the publisher or abstract page in `url`; identical PDF links are shown only once. Set `pdf_label` when a version needs identifying (for example, `PDF (preprint)`).
+PDFs are hosted in `docs/pdfs/`. Set each publication's `pdf` to its root-relative path (for example, `/pdfs/finmoji.pdf`). Every paper shows a single **PDF** button on the homepage, CV, and paper page, opening the hosted file in a new tab.
 
-PDF sources: CRI-Lab author copies, arXiv preprints, ACL Anthology, and the KAUST institutional repository. The `pdf` URLs in `publications.json` record each source.
+`pdf_source` records the original public source for provenance; `url`, `html`, and `code` metadata are retained but are not displayed as extra publication buttons. To replace a PDF, update the file in `docs/pdfs/`, then rebuild and commit the source and generated pages.
