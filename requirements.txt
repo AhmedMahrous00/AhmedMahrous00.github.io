@@ -1,0 +1,4 @@
+pymupdf
+pymupdf4llm
+markdown
+beautifulsoup4

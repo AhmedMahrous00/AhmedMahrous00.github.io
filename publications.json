@@ -8,7 +8,7 @@
     "url": "https://cri-lab.net/wp-content/uploads/2026/09/main-1.pdf",
     "label": "PDF",
     "summary": "When predictions change the data that future models learn from, interactions between learners can amplify feedback. We study a spectral threshold separating stable retraining from worst-case learning failure.",
-    "pdf": "/pdfs/reflexivity-threshold.pdf",
+    "pdf": "/papers/reflexivity-threshold/paper.pdf",
     "pdf_source": "https://cri-lab.net/wp-content/uploads/2026/09/main-1.pdf",
     "citation": {
       "type": "inproceedings",
@@ -26,7 +26,7 @@
     "url": "https://doi.org/10.1016/j.iref.2026.105665",
     "label": "Published paper",
     "summary": "A systematic review of stablecoin research, connecting economic, technical, and policy questions and identifying open challenges.",
-    "pdf": "/pdfs/stablecoins.pdf",
+    "pdf": "/papers/stablecoins/paper.pdf",
     "pdf_source": "https://arxiv.org/pdf/2507.13883",
     "citation": {
       "type": "article",
@@ -49,7 +49,7 @@
     "url": "https://doi.org/10.1145/3829331",
     "label": "Published paper",
     "summary": "A framework for studying emojis as signals of investor sentiment in financial social media.",
-    "pdf": "/pdfs/finmoji.pdf",
+    "pdf": "/papers/finmoji/paper.pdf",
     "pdf_source": "https://arxiv.org/pdf/2605.09469",
     "citation": {
       "type": "article",
@@ -72,7 +72,7 @@
     "url": "https://aclanthology.org/2026.findings-acl.1106/",
     "label": "Paper",
     "summary": "We examine how emoji meanings and sentiment signals transfer across languages, platforms, and financial communities.",
-    "pdf": "/pdfs/cross-cultural-emojis.pdf",
+    "pdf": "/papers/cross-cultural-emojis/paper.pdf",
     "pdf_source": "https://aclanthology.org/2026.findings-acl.1106.pdf",
     "citation": {
       "type": "inproceedings",
@@ -92,8 +92,8 @@
     "venue": "ACM International Conference on AI in Finance (ICAIF 2026) \u00b7 Accepted",
     "url": "https://doi.org/10.1145/3858063.3858742",
     "label": null,
-    "summary": "Research on the information available when prediction-market contracts are launched.",
-    "pdf": "/pdfs/prediction-market-launch.pdf",
+    "summary": "Using 802,863 Polymarket contracts, we study how launch-time information predicts trading volume and dispute risk. Volume predictions generalize poorly across platform changes, while rare disputes remain difficult to predict individually.",
+    "pdf": "/papers/prediction-market-launch/paper.pdf",
     "pdf_source": "https://cri-lab.net/wp-content/uploads/2026/10/ICAIF_2026_camera_ready-1.pdf",
     "citation": {
       "type": "inproceedings",
@@ -116,7 +116,7 @@
     "summary": "Detection of Telegram pump announcements and extraction of the targeted cryptocurrency and exchange.",
     "code": "https://github.com/AhmedMahrous00/icbc_2026_reproducibility",
     "html": "https://arxiv.org/html/2605.09431v1",
-    "pdf": "/pdfs/pumpsense.pdf",
+    "pdf": "/papers/pumpsense/paper.pdf",
     "pdf_source": "https://arxiv.org/pdf/2605.09431",
     "citation": {
       "type": "inproceedings",
@@ -137,7 +137,7 @@
     "url": "https://doi.org/10.1145/3768292.3770393",
     "label": "Published paper",
     "summary": "We study training on synthetic data and testing on real data for financial manipulation detection.",
-    "pdf": "/pdfs/tstr-financial-fraud.pdf",
+    "pdf": "/papers/tstr-financial-fraud/paper.pdf",
     "pdf_source": "https://repository.kaust.edu.sa/server/api/core/bitstreams/0bd790d5-770f-4a55-b558-922820e30e38/content",
     "citation": {
       "type": "inproceedings",
@@ -158,7 +158,7 @@
     "url": "https://cri-lab.net/wp-content/uploads/2025/03/Stablecoin_SoK.pdf",
     "label": "PDF",
     "summary": "A structured account of economic and technical research on stablecoins.",
-    "pdf": "/pdfs/stablecoin-sok.pdf",
+    "pdf": "/papers/stablecoin-sok/paper.pdf",
     "pdf_source": "https://cri-lab.net/wp-content/uploads/2025/03/Stablecoin_SoK.pdf",
     "citation": {
       "type": "inproceedings",
@@ -179,7 +179,7 @@
     "url": "https://doi.org/10.1109/BCCA66705.2025.11229591",
     "label": "Published paper",
     "summary": "An analysis of the relationship between visual aesthetics and NFT prices.",
-    "pdf": "/pdfs/nft-aesthetics.pdf",
+    "pdf": "/papers/nft-aesthetics/paper.pdf",
     "pdf_source": "https://repository.kaust.edu.sa/server/api/core/bitstreams/600613c2-e856-4a58-a37b-87240252668f/content",
     "citation": {
       "type": "inproceedings",
@@ -200,7 +200,7 @@
     "url": "https://doi.org/10.1016/j.frl.2024.105861",
     "label": "Published paper",
     "summary": "An empirical study of coin-level and market-level factors associated with cryptocurrency pump-and-dump schemes.",
-    "pdf": "/pdfs/pump-and-dump.pdf",
+    "pdf": "/papers/pump-and-dump/paper.pdf",
     "pdf_source": "https://repository.kaust.edu.sa/server/api/core/bitstreams/5144eca7-331e-402b-9061-dd4de3a2a483/content",
     "citation": {
       "type": "article",
@@ -223,7 +223,7 @@
     "url": "https://doi.org/10.1109/IDSTA58916.2023.10317863",
     "label": "Published paper",
     "summary": "A study of emojis in sentiment analysis of financial microblogs.",
-    "pdf": "/pdfs/financial-microblog-emojis.pdf",
+    "pdf": "/papers/financial-microblog-emojis/paper.pdf",
     "pdf_source": "https://cri-lab.net/wp-content/uploads/2023/10/IEEE_IDSTA_Kuwait_2023.pdf",
     "citation": {
       "type": "inproceedings",

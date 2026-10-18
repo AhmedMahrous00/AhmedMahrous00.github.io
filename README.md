@@ -1,19 +1,19 @@
 # Ahmed Mahrous — academic homepage
 
-Static academic website published using GitHub Pages.
+Static academic website published using GitHub Pages at https://amahrous.com/.
 
 ## Update
 
-Edit `publications.json` for paper metadata or `build.py` for the profile and layout. Run:
+Edit `publications.json` for metadata and TL;DR summaries, `abstracts.json` for complete author-written abstracts, and `build.py` for the profile and layout. Each paper's PDF lives at `docs/papers/<slug>/paper.pdf`, beside its HTML page and `citation.bib`. `pdf_source` records the original public source. Historical `/pdfs/<slug>.pdf` links remain available.
+
+`content/<slug>.html` contains the full-text HTML reading edition, transcribed from the corresponding PDF. Equations and figures retain source images; source-page links point back to the PDF. Published DOIs identify the cited version; author-manuscript content is labeled separately.
+
+Rebuild pages:
 
 ```sh
 python3 build.py
 ```
 
-Commit the updated source and `docs/` files. In Settings → Pages, select **Deploy from a branch**, **main**, and **/docs**.
+To regenerate full text after replacing a manuscript, install `requirements.txt`, run `python3 scripts/extract_fulltext.py`, check the output against the PDF, and rebuild. Verify abstracts separately after a manuscript change.
 
-Site: https://amahrous.com/
-
-PDFs are hosted in `docs/pdfs/`. Set each publication's `pdf` to its root-relative path (for example, `/pdfs/finmoji.pdf`). Every paper shows a single **PDF** button on the homepage, CV, and paper page, opening the hosted file in a new tab.
-
-`pdf_source` records the original public source for provenance; `url`, `html`, and `code` metadata are retained but are not displayed as extra publication buttons. To replace a PDF, update the file in `docs/pdfs/`, then rebuild and commit the source and generated pages.
+Commit the updated source and `docs/` files. GitHub Pages deploys branch **main**, folder **/docs**.
