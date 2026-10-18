@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "reflexivity-threshold",
+    "year": "2026",
+    "title": "The reflexivity threshold: A phase transition for multi-agent performative prediction",
+    "authors": "Ahmed Mahrous and Roberto Di Pietro",
+    "venue": "NeurIPS 2026 \u00b7 Accepted",
+    "url": "https://cri-lab.net/wp-content/uploads/2026/09/main-1.pdf",
+    "label": "PDF",
+    "summary": "When predictions change the data that future models learn from, interactions between learners can amplify feedback. We study a spectral threshold separating stable retraining from worst-case learning failure."
+  },
+  {
+    "slug": "stablecoins",
+    "year": "2026",
+    "title": "Stablecoins: Fundamentals, emerging issues, and open challenges",
+    "authors": "Ahmed Mahrous, Maurantonio Caprolu, and Roberto Di Pietro",
+    "venue": "International Review of Economics & Finance, 111, 105665",
+    "url": "https://doi.org/10.1016/j.iref.2026.105665",
+    "label": "Published paper",
+    "summary": "A systematic review of stablecoin research, connecting economic, technical, and policy questions and identifying open challenges."
+  },
+  {
+    "slug": "finmoji",
+    "year": "2026",
+    "title": "FinMoji: A framework for emoji-driven sentiment analysis in financial social media",
+    "authors": "Ahmed Mahrous, Jens Schneider, and Roberto Di Pietro",
+    "venue": "ACM Transactions on the Web, 20(3), Article 35",
+    "url": "https://doi.org/10.1145/3829331",
+    "label": "Published paper",
+    "summary": "A framework for studying emojis as signals of investor sentiment in financial social media."
+  },
+  {
+    "slug": "cross-cultural-emojis",
+    "year": "2026",
+    "title": "Cross-cultural transfer of emoji semantics and sentiment in financial social media",
+    "authors": "Ahmed Mahrous and Roberto Di Pietro",
+    "venue": "Findings of ACL 2026",
+    "url": "https://aclanthology.org/2026.findings-acl.1106/",
+    "label": "Paper & PDF",
+    "summary": "We examine how emoji meanings and sentiment signals transfer across languages, platforms, and financial communities."
+  },
+  {
+    "slug": "prediction-market-launch",
+    "year": "2026",
+    "title": "What prediction-market contracts reveal at launch",
+    "authors": "Ahmed Mahrous and Roberto Di Pietro",
+    "venue": "ACM International Conference on AI in Finance (ICAIF 2026) \u00b7 Accepted",
+    "url": null,
+    "label": null,
+    "summary": "Research on the information available when prediction-market contracts are launched."
+  },
+  {
+    "slug": "pumpsense",
+    "year": "2026",
+    "title": "PumpSense: Real-time detection and target extraction of crypto pump-and-dumps on Telegram",
+    "authors": "Ahmed Mahrous and Roberto Di Pietro",
+    "venue": "IEEE International Conference on Blockchain and Cryptocurrency (ICBC 2026)",
+    "url": "https://arxiv.org/abs/2605.09431",
+    "label": "Paper & PDF",
+    "summary": "Detection of Telegram pump announcements and extraction of the targeted cryptocurrency and exchange.",
+    "code": "https://github.com/AhmedMahrous00/icbc_2026_reproducibility",
+    "html": "https://arxiv.org/html/2605.09431v1"
+  },
+  {
+    "slug": "tstr-financial-fraud",
+    "year": "2025",
+    "title": "TSTR for financial fraud: Learning to detect manipulation without real data",
+    "authors": "Ahmed Mahrous and Roberto Di Pietro",
+    "venue": "ACM International Conference on AI in Finance (ICAIF 2025)",
+    "url": "https://doi.org/10.1145/3768292.3770393",
+    "label": "Published paper",
+    "summary": "We study training on synthetic data and testing on real data for financial manipulation detection."
+  },
+  {
+    "slug": "stablecoin-sok",
+    "year": "2025",
+    "title": "SoK: A structured analysis of economic and technical stablecoin-related research",
+    "authors": "Ahmed Mahrous, Maurantonio Caprolu, and Roberto Di Pietro",
+    "venue": "IEEE International Conference on Blockchain and Cryptocurrency (ICBC 2025)",
+    "url": "https://cri-lab.net/wp-content/uploads/2025/03/Stablecoin_SoK.pdf",
+    "label": "PDF",
+    "summary": "A structured account of economic and technical research on stablecoins."
+  },
+  {
+    "slug": "nft-aesthetics",
+    "year": "2025",
+    "title": "Demystifying the role of aesthetics in NFT pricing: Model, analysis, and insights",
+    "authors": "Ahmed Mahrous and Roberto Di Pietro",
+    "venue": "International Conference on Blockchain Computing and Applications (BCCA 2025)",
+    "url": "https://doi.org/10.1109/BCCA66705.2025.11229591",
+    "label": "Published paper",
+    "summary": "An analysis of the relationship between visual aesthetics and NFT prices."
+  },
+  {
+    "slug": "pump-and-dump",
+    "year": "2024",
+    "title": "What drives cryptocurrency pump and dump schemes: Coin versus market factors?",
+    "authors": "Lanouar Charfeddine and Ahmed Mahrous",
+    "venue": "Finance Research Letters, 67, 105861",
+    "url": "https://doi.org/10.1016/j.frl.2024.105861",
+    "label": "Published paper",
+    "summary": "An empirical study of coin-level and market-level factors associated with cryptocurrency pump-and-dump schemes."
+  },
+  {
+    "slug": "financial-microblog-emojis",
+    "year": "2023",
+    "title": "The role of emojis in sentiment analysis of financial microblogs",
+    "authors": "Ahmed Mahrous, Jens Schneider, and Roberto Di Pietro",
+    "venue": "Fourth International Conference on Intelligent Data Science Technologies and Applications (IDSTA 2023)",
+    "url": "https://doi.org/10.1109/IDSTA58916.2023.10317863",
+    "label": "Published paper",
+    "summary": "A study of emojis in sentiment analysis of financial microblogs."
+  }
+]
