@@ -2,11 +2,11 @@
   {
     "slug": "reflexivity-threshold",
     "pages": 12,
-    "html_bytes": 416645,
-    "words": 6596,
+    "html_bytes": 455102,
+    "words": 6421,
     "source_pdf_words": 6650,
-    "images": 50,
-    "html_tables": 2,
+    "images": 49,
+    "html_tables": 0,
     "page_sections": 12,
     "sections": [
       "1 Introduction",
@@ -25,11 +25,11 @@
   {
     "slug": "stablecoins",
     "pages": 35,
-    "html_bytes": 467783,
-    "words": 34808,
+    "html_bytes": 466050,
+    "words": 34732,
     "source_pdf_words": 34913,
     "images": 9,
-    "html_tables": 7,
+    "html_tables": 4,
     "page_sections": 35,
     "sections": [
       "I. INTRODUCTION",
@@ -191,11 +191,11 @@
   {
     "slug": "prediction-market-launch",
     "pages": 8,
-    "html_bytes": 157148,
-    "words": 7157,
+    "html_bytes": 156414,
+    "words": 7059,
     "source_pdf_words": 7480,
     "images": 4,
-    "html_tables": 8,
+    "html_tables": 6,
     "page_sections": 8,
     "sections": [
       "1 Introduction",
@@ -218,11 +218,11 @@
   {
     "slug": "pumpsense",
     "pages": 9,
-    "html_bytes": 150978,
-    "words": 7040,
+    "html_bytes": 150389,
+    "words": 6998,
     "source_pdf_words": 7231,
     "images": 2,
-    "html_tables": 7,
+    "html_tables": 5,
     "page_sections": 9,
     "sections": [
       "I. INTRODUCTION",

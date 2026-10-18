@@ -15,7 +15,9 @@ import io
 import json
 from pathlib import Path
 import re
+import subprocess
 import sys
+from concurrent.futures import ThreadPoolExecutor
 
 from bs4 import BeautifulSoup
 from PIL import Image
@@ -182,6 +184,42 @@ def repair_known_layout(slug: str, number: int, chunk: dict) -> dict:
     return chunk
 
 
+CHART_REGIONS = {
+    ('prediction-market-launch', 5): (315,78,562,205),
+    ('prediction-market-launch', 7): (315,300,562,430),
+    ('pumpsense', 5): (46,576,304,699),
+    ('stablecoins', 3): (309,490,567,668),
+    ('stablecoins', 6): (309,570,567,731),
+    ('stablecoins', 11): (309,432,567,590),
+}
+
+
+def repair_chart_regions(slug: str, number: int, chunk: dict, page) -> dict:
+    """Retain exact plots when their axes were also classified as tables."""
+    region = CHART_REGIONS.get((slug, number))
+    if region is None:
+        return chunk
+    rect = pymupdf.Rect(region)
+    text, boxes, inserted = '', [], False
+    for box in chunk['page_boxes']:
+        a, b = box['pos']
+        segment = chunk['text'][a:b]
+        bounds = pymupdf.Rect(box['bbox'])
+        overlap = bounds & rect
+        is_chart = (box['class'] in ('picture', 'table') and not overlap.is_empty
+                    and overlap.get_area() / bounds.get_area() > .8)
+        if is_chart:
+            if inserted:
+                continue
+            segment = (f'\n\n<figure class="source-excerpt"><img src="{crop(page, rect)}" '
+                       f'alt="Complete chart from PDF page {number}, including original axes and labels" loading="lazy"></figure>\n\n')
+            box = dict(box, **{'class': 'picture', 'bbox': list(region)})
+            inserted = True
+        boxes.append(dict(box, pos=[len(text), len(text) + len(segment)]))
+        text += segment
+    return dict(chunk, text=text, page_boxes=boxes)
+
+
 def start_at_introduction(fragment: str) -> tuple[str, bool]:
     soup = BeautifulSoup(fragment, 'html.parser')
     intro = next((h for h in soup.find_all(['h3', 'h4'])
@@ -199,6 +237,17 @@ def start_at_introduction(fragment: str) -> tuple[str, bool]:
 
 def cleanup_fragment(slug: str, number: int, fragment: str, page=None) -> str:
     soup = BeautifulSoup(fragment, 'html.parser')
+    if slug == 'reflexivity-threshold' and number == 7 and page is not None:
+        caption = next((p for p in soup.find_all('p') if p.get_text(' ', strip=True).startswith('Figure 1: The reflexivity threshold.')), None)
+        if caption is not None:
+            caption_html = str(caption)
+            # Only the complete top figure precedes this caption. Its chart axes
+            # were also misread as numeric tables; preserve the actual plotted
+            # figure and captions, then resume the proof immediately below it.
+            for node in list(caption.previous_siblings):
+                node.extract()
+            exact = BeautifulSoup(f'<figure class="source-excerpt"><img src="{crop(page, (105,65,508,291))}" alt="Figure 1: complete reflexivity-threshold plots with axes, legends, panel captions, and figure caption" loading="lazy"><figcaption>{caption_html}</figcaption></figure>', 'html.parser')
+            caption.replace_with(exact)
     if slug == 'finmoji':
         for p in list(soup.find_all('p')):
             if number > 1 and p.get_text(' ', strip=True) == 'FinMoji: A Framework for Emoji-driven Sentiment Analysis in Financial Social Media':
@@ -298,6 +347,7 @@ def extract(slug: str, force: bool = False) -> dict:
     for i, chunk in enumerate(chunks):
         number = i + 1
         chunk = repair_known_layout(slug, number, chunk)
+        chunk = repair_chart_regions(slug, number, chunk, doc[i])
         fragment = process_page(chunk, doc[i], number)
         fragment = cleanup_fragment(slug, number, fragment, doc[i])
         if i == 0:
@@ -321,12 +371,35 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('slugs', nargs='*')
     parser.add_argument('--force', action='store_true')
+    parser.add_argument('--worker', action='store_true', help=argparse.SUPPRESS)
     args = parser.parse_args()
     OUT.mkdir(exist_ok=True)
     CACHE.mkdir(exist_ok=True)
     slugs = args.slugs or [p['slug'] for p in json.loads((ROOT / 'publications.json').read_text())]
-    records = [extract(slug, args.force) for slug in slugs]
-    (OUT / 'extraction-report.json').write_text(json.dumps(records, ensure_ascii=False, indent=2) + '\n')
+    if args.worker:
+        if len(slugs) != 1:
+            parser.error('--worker requires exactly one paper slug')
+        record = extract(slugs[0], args.force)
+        (CACHE / f'{slugs[0]}.report.json').write_text(json.dumps(record, ensure_ascii=False))
+        return
+    if len(slugs) > 1:
+        # A native layout engine can accumulate state over many documents. Each
+        # worker handles one PDF and exits, bounding its memory and model state.
+        def worker(slug):
+            command = [sys.executable, str(Path(__file__).resolve()), '--worker', slug]
+            if args.force:
+                command.append('--force')
+            subprocess.run(command, check=True)
+            return json.loads((CACHE / f'{slug}.report.json').read_text())
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            records = list(pool.map(worker, slugs))
+    else:
+        records = [extract(slugs[0], args.force)]
+    report_path = OUT / 'extraction-report.json'
+    existing = {r['slug']: r for r in json.loads(report_path.read_text())} if report_path.exists() else {}
+    existing.update({r['slug']: r for r in records})
+    order = [p['slug'] for p in json.loads((ROOT / 'publications.json').read_text())]
+    report_path.write_text(json.dumps([existing[s] for s in order if s in existing], ensure_ascii=False, indent=2) + '\n')
 
 
 if __name__ == '__main__':
