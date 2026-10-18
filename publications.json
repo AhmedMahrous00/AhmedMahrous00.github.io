@@ -9,7 +9,13 @@
     "label": "PDF",
     "summary": "When predictions change the data that future models learn from, interactions between learners can amplify feedback. We study a spectral threshold separating stable retraining from worst-case learning failure.",
     "pdf": "/pdfs/reflexivity-threshold.pdf",
-    "pdf_source": "https://cri-lab.net/wp-content/uploads/2026/09/main-1.pdf"
+    "pdf_source": "https://cri-lab.net/wp-content/uploads/2026/09/main-1.pdf",
+    "citation": {
+      "type": "inproceedings",
+      "booktitle": "Advances in Neural Information Processing Systems",
+      "note": "Accepted at NeurIPS 2026; final proceedings details forthcoming",
+      "source": "https://cri-lab.net/wp-content/uploads/2026/09/main-1.pdf"
+    }
   },
   {
     "slug": "stablecoins",
@@ -21,7 +27,18 @@
     "label": "Published paper",
     "summary": "A systematic review of stablecoin research, connecting economic, technical, and policy questions and identifying open challenges.",
     "pdf": "/pdfs/stablecoins.pdf",
-    "pdf_source": "https://arxiv.org/pdf/2507.13883"
+    "pdf_source": "https://arxiv.org/pdf/2507.13883",
+    "citation": {
+      "type": "article",
+      "doi": "10.1016/j.iref.2026.105665",
+      "publisher": "Elsevier BV",
+      "date": "2026-10",
+      "journal": "International Review of Economics & Finance",
+      "volume": "111",
+      "pages": "105665",
+      "eid": "105665",
+      "source": "https://api.crossref.org/works/10.1016/j.iref.2026.105665"
+    }
   },
   {
     "slug": "finmoji",
@@ -33,7 +50,18 @@
     "label": "Published paper",
     "summary": "A framework for studying emojis as signals of investor sentiment in financial social media.",
     "pdf": "/pdfs/finmoji.pdf",
-    "pdf_source": "https://arxiv.org/pdf/2605.09469"
+    "pdf_source": "https://arxiv.org/pdf/2605.09469",
+    "citation": {
+      "type": "article",
+      "doi": "10.1145/3829331",
+      "publisher": "Association for Computing Machinery (ACM)",
+      "date": "2026-08-13",
+      "journal": "ACM Transactions on the Web",
+      "volume": "20",
+      "number": "3",
+      "pages": "1-30",
+      "source": "https://api.crossref.org/works/10.1145/3829331"
+    }
   },
   {
     "slug": "cross-cultural-emojis",
@@ -45,19 +73,37 @@
     "label": "Paper",
     "summary": "We examine how emoji meanings and sentiment signals transfer across languages, platforms, and financial communities.",
     "pdf": "/pdfs/cross-cultural-emojis.pdf",
-    "pdf_source": "https://aclanthology.org/2026.findings-acl.1106.pdf"
+    "pdf_source": "https://aclanthology.org/2026.findings-acl.1106.pdf",
+    "citation": {
+      "type": "inproceedings",
+      "doi": "10.18653/v1/2026.findings-acl.1106",
+      "publisher": "Association for Computational Linguistics",
+      "date": "2026",
+      "booktitle": "Findings of the Association for Computational Linguistics: ACL 2026",
+      "pages": "21982-21999",
+      "source": "https://api.crossref.org/works/10.18653/v1/2026.findings-acl.1106"
+    }
   },
   {
     "slug": "prediction-market-launch",
     "year": "2026",
-    "title": "What prediction-market contracts reveal at launch",
+    "title": "What prediction-market contracts reveal at launch: Trading volume and dispute risk",
     "authors": "Ahmed Mahrous and Roberto Di Pietro",
     "venue": "ACM International Conference on AI in Finance (ICAIF 2026) \u00b7 Accepted",
-    "url": null,
+    "url": "https://doi.org/10.1145/3858063.3858742",
     "label": null,
     "summary": "Research on the information available when prediction-market contracts are launched.",
     "pdf": "/pdfs/prediction-market-launch.pdf",
-    "pdf_source": "https://cri-lab.net/wp-content/uploads/2026/10/ICAIF_2026_camera_ready-1.pdf"
+    "pdf_source": "https://cri-lab.net/wp-content/uploads/2026/10/ICAIF_2026_camera_ready-1.pdf",
+    "citation": {
+      "type": "inproceedings",
+      "booktitle": "7th ACM International Conference on AI in Finance (ICAIF 2026)",
+      "publisher": "Association for Computing Machinery",
+      "doi": "10.1145/3858063.3858742",
+      "isbn": "979-8-4007-3087-0",
+      "note": "Accepted; citation details from the camera-ready manuscript. Final proceedings pagination forthcoming",
+      "source": "https://cri-lab.net/wp-content/uploads/2026/10/ICAIF_2026_camera_ready-1.pdf"
+    }
   },
   {
     "slug": "pumpsense",
@@ -71,7 +117,16 @@
     "code": "https://github.com/AhmedMahrous00/icbc_2026_reproducibility",
     "html": "https://arxiv.org/html/2605.09431v1",
     "pdf": "/pdfs/pumpsense.pdf",
-    "pdf_source": "https://arxiv.org/pdf/2605.09431"
+    "pdf_source": "https://arxiv.org/pdf/2605.09431",
+    "citation": {
+      "type": "inproceedings",
+      "doi": "10.1109/icbc67748.2026.11575494",
+      "publisher": "IEEE",
+      "date": "2026-06-01",
+      "booktitle": "2026 IEEE International Conference on Blockchain and Cryptocurrency (ICBC)",
+      "pages": "1-9",
+      "source": "https://api.crossref.org/works/10.1109/icbc67748.2026.11575494"
+    }
   },
   {
     "slug": "tstr-financial-fraud",
@@ -83,7 +138,16 @@
     "label": "Published paper",
     "summary": "We study training on synthetic data and testing on real data for financial manipulation detection.",
     "pdf": "/pdfs/tstr-financial-fraud.pdf",
-    "pdf_source": "https://repository.kaust.edu.sa/server/api/core/bitstreams/0bd790d5-770f-4a55-b558-922820e30e38/content"
+    "pdf_source": "https://repository.kaust.edu.sa/server/api/core/bitstreams/0bd790d5-770f-4a55-b558-922820e30e38/content",
+    "citation": {
+      "type": "inproceedings",
+      "doi": "10.1145/3768292.3770393",
+      "publisher": "ACM",
+      "date": "2025-11-14",
+      "booktitle": "Proceedings of the 6th ACM International Conference on AI in Finance",
+      "pages": "71-79",
+      "source": "https://api.crossref.org/works/10.1145/3768292.3770393"
+    }
   },
   {
     "slug": "stablecoin-sok",
@@ -95,7 +159,16 @@
     "label": "PDF",
     "summary": "A structured account of economic and technical research on stablecoins.",
     "pdf": "/pdfs/stablecoin-sok.pdf",
-    "pdf_source": "https://cri-lab.net/wp-content/uploads/2025/03/Stablecoin_SoK.pdf"
+    "pdf_source": "https://cri-lab.net/wp-content/uploads/2025/03/Stablecoin_SoK.pdf",
+    "citation": {
+      "type": "inproceedings",
+      "doi": "10.1109/icbc64466.2025.11114650",
+      "publisher": "IEEE",
+      "date": "2025-06-02",
+      "booktitle": "2025 IEEE International Conference on Blockchain and Cryptocurrency (ICBC)",
+      "pages": "1-21",
+      "source": "https://api.crossref.org/works/10.1109/icbc64466.2025.11114650"
+    }
   },
   {
     "slug": "nft-aesthetics",
@@ -107,7 +180,16 @@
     "label": "Published paper",
     "summary": "An analysis of the relationship between visual aesthetics and NFT prices.",
     "pdf": "/pdfs/nft-aesthetics.pdf",
-    "pdf_source": "https://repository.kaust.edu.sa/server/api/core/bitstreams/600613c2-e856-4a58-a37b-87240252668f/content"
+    "pdf_source": "https://repository.kaust.edu.sa/server/api/core/bitstreams/600613c2-e856-4a58-a37b-87240252668f/content",
+    "citation": {
+      "type": "inproceedings",
+      "doi": "10.1109/bcca66705.2025.11229591",
+      "publisher": "IEEE",
+      "date": "2025-10-14",
+      "booktitle": "2025 7th International Conference on Blockchain Computing and Applications (BCCA)",
+      "pages": "657-664",
+      "source": "https://api.crossref.org/works/10.1109/bcca66705.2025.11229591"
+    }
   },
   {
     "slug": "pump-and-dump",
@@ -119,7 +201,18 @@
     "label": "Published paper",
     "summary": "An empirical study of coin-level and market-level factors associated with cryptocurrency pump-and-dump schemes.",
     "pdf": "/pdfs/pump-and-dump.pdf",
-    "pdf_source": "https://repository.kaust.edu.sa/server/api/core/bitstreams/5144eca7-331e-402b-9061-dd4de3a2a483/content"
+    "pdf_source": "https://repository.kaust.edu.sa/server/api/core/bitstreams/5144eca7-331e-402b-9061-dd4de3a2a483/content",
+    "citation": {
+      "type": "article",
+      "doi": "10.1016/j.frl.2024.105861",
+      "publisher": "Elsevier BV",
+      "date": "2024-09",
+      "journal": "Finance Research Letters",
+      "volume": "67",
+      "pages": "105861",
+      "eid": "105861",
+      "source": "https://api.crossref.org/works/10.1016/j.frl.2024.105861"
+    }
   },
   {
     "slug": "financial-microblog-emojis",
@@ -131,6 +224,15 @@
     "label": "Published paper",
     "summary": "A study of emojis in sentiment analysis of financial microblogs.",
     "pdf": "/pdfs/financial-microblog-emojis.pdf",
-    "pdf_source": "https://cri-lab.net/wp-content/uploads/2023/10/IEEE_IDSTA_Kuwait_2023.pdf"
+    "pdf_source": "https://cri-lab.net/wp-content/uploads/2023/10/IEEE_IDSTA_Kuwait_2023.pdf",
+    "citation": {
+      "type": "inproceedings",
+      "doi": "10.1109/idsta58916.2023.10317863",
+      "publisher": "IEEE",
+      "date": "2023-10-24",
+      "booktitle": "2023 Fourth International Conference on Intelligent Data Science Technologies and Applications (IDSTA)",
+      "pages": "76-84",
+      "source": "https://api.crossref.org/works/10.1109/idsta58916.2023.10317863"
+    }
   }
 ]
