@@ -92,7 +92,7 @@
     "venue": "ACM International Conference on AI in Finance (ICAIF 2026) \u00b7 Accepted",
     "url": "https://doi.org/10.1145/3858063.3858742",
     "label": null,
-    "summary": "Using 802,863 Polymarket contracts, we study how launch-time information predicts trading volume and dispute risk. Volume predictions generalize poorly across platform changes, while rare disputes remain difficult to predict individually.",
+    "summary": "We study whether information available when Polymarket contracts launch can predict trading activity and dispute risk.",
     "pdf": "/papers/prediction-market-launch/paper.pdf",
     "pdf_source": "https://cri-lab.net/wp-content/uploads/2026/10/ICAIF_2026_camera_ready-1.pdf",
     "citation": {
