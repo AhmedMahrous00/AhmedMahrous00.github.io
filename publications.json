@@ -7,7 +7,8 @@
     "venue": "NeurIPS 2026 \u00b7 Accepted",
     "url": "https://cri-lab.net/wp-content/uploads/2026/09/main-1.pdf",
     "label": "PDF",
-    "summary": "When predictions change the data that future models learn from, interactions between learners can amplify feedback. We study a spectral threshold separating stable retraining from worst-case learning failure."
+    "summary": "When predictions change the data that future models learn from, interactions between learners can amplify feedback. We study a spectral threshold separating stable retraining from worst-case learning failure.",
+    "pdf": "https://cri-lab.net/wp-content/uploads/2026/09/main-1.pdf"
   },
   {
     "slug": "stablecoins",
@@ -17,7 +18,9 @@
     "venue": "International Review of Economics & Finance, 111, 105665",
     "url": "https://doi.org/10.1016/j.iref.2026.105665",
     "label": "Published paper",
-    "summary": "A systematic review of stablecoin research, connecting economic, technical, and policy questions and identifying open challenges."
+    "summary": "A systematic review of stablecoin research, connecting economic, technical, and policy questions and identifying open challenges.",
+    "pdf": "https://arxiv.org/pdf/2507.13883",
+    "pdf_label": "PDF (preprint)"
   },
   {
     "slug": "finmoji",
@@ -27,7 +30,9 @@
     "venue": "ACM Transactions on the Web, 20(3), Article 35",
     "url": "https://doi.org/10.1145/3829331",
     "label": "Published paper",
-    "summary": "A framework for studying emojis as signals of investor sentiment in financial social media."
+    "summary": "A framework for studying emojis as signals of investor sentiment in financial social media.",
+    "pdf": "https://arxiv.org/pdf/2605.09469",
+    "pdf_label": "PDF (preprint)"
   },
   {
     "slug": "cross-cultural-emojis",
@@ -36,8 +41,9 @@
     "authors": "Ahmed Mahrous and Roberto Di Pietro",
     "venue": "Findings of ACL 2026",
     "url": "https://aclanthology.org/2026.findings-acl.1106/",
-    "label": "Paper & PDF",
-    "summary": "We examine how emoji meanings and sentiment signals transfer across languages, platforms, and financial communities."
+    "label": "Paper",
+    "summary": "We examine how emoji meanings and sentiment signals transfer across languages, platforms, and financial communities.",
+    "pdf": "https://aclanthology.org/2026.findings-acl.1106.pdf"
   },
   {
     "slug": "prediction-market-launch",
@@ -47,7 +53,8 @@
     "venue": "ACM International Conference on AI in Finance (ICAIF 2026) \u00b7 Accepted",
     "url": null,
     "label": null,
-    "summary": "Research on the information available when prediction-market contracts are launched."
+    "summary": "Research on the information available when prediction-market contracts are launched.",
+    "pdf": "https://cri-lab.net/wp-content/uploads/2026/10/ICAIF_2026_camera_ready-1.pdf"
   },
   {
     "slug": "pumpsense",
@@ -56,10 +63,11 @@
     "authors": "Ahmed Mahrous and Roberto Di Pietro",
     "venue": "IEEE International Conference on Blockchain and Cryptocurrency (ICBC 2026)",
     "url": "https://arxiv.org/abs/2605.09431",
-    "label": "Paper & PDF",
+    "label": "Paper",
     "summary": "Detection of Telegram pump announcements and extraction of the targeted cryptocurrency and exchange.",
     "code": "https://github.com/AhmedMahrous00/icbc_2026_reproducibility",
-    "html": "https://arxiv.org/html/2605.09431v1"
+    "html": "https://arxiv.org/html/2605.09431v1",
+    "pdf": "https://arxiv.org/pdf/2605.09431"
   },
   {
     "slug": "tstr-financial-fraud",
@@ -69,7 +77,8 @@
     "venue": "ACM International Conference on AI in Finance (ICAIF 2025)",
     "url": "https://doi.org/10.1145/3768292.3770393",
     "label": "Published paper",
-    "summary": "We study training on synthetic data and testing on real data for financial manipulation detection."
+    "summary": "We study training on synthetic data and testing on real data for financial manipulation detection.",
+    "pdf": "https://repository.kaust.edu.sa/server/api/core/bitstreams/0bd790d5-770f-4a55-b558-922820e30e38/content"
   },
   {
     "slug": "stablecoin-sok",
@@ -79,7 +88,8 @@
     "venue": "IEEE International Conference on Blockchain and Cryptocurrency (ICBC 2025)",
     "url": "https://cri-lab.net/wp-content/uploads/2025/03/Stablecoin_SoK.pdf",
     "label": "PDF",
-    "summary": "A structured account of economic and technical research on stablecoins."
+    "summary": "A structured account of economic and technical research on stablecoins.",
+    "pdf": "https://cri-lab.net/wp-content/uploads/2025/03/Stablecoin_SoK.pdf"
   },
   {
     "slug": "nft-aesthetics",
@@ -89,7 +99,8 @@
     "venue": "International Conference on Blockchain Computing and Applications (BCCA 2025)",
     "url": "https://doi.org/10.1109/BCCA66705.2025.11229591",
     "label": "Published paper",
-    "summary": "An analysis of the relationship between visual aesthetics and NFT prices."
+    "summary": "An analysis of the relationship between visual aesthetics and NFT prices.",
+    "pdf": "https://repository.kaust.edu.sa/server/api/core/bitstreams/600613c2-e856-4a58-a37b-87240252668f/content"
   },
   {
     "slug": "pump-and-dump",
@@ -99,7 +110,8 @@
     "venue": "Finance Research Letters, 67, 105861",
     "url": "https://doi.org/10.1016/j.frl.2024.105861",
     "label": "Published paper",
-    "summary": "An empirical study of coin-level and market-level factors associated with cryptocurrency pump-and-dump schemes."
+    "summary": "An empirical study of coin-level and market-level factors associated with cryptocurrency pump-and-dump schemes.",
+    "pdf": "https://repository.kaust.edu.sa/server/api/core/bitstreams/5144eca7-331e-402b-9061-dd4de3a2a483/content"
   },
   {
     "slug": "financial-microblog-emojis",
@@ -109,6 +121,7 @@
     "venue": "Fourth International Conference on Intelligent Data Science Technologies and Applications (IDSTA 2023)",
     "url": "https://doi.org/10.1109/IDSTA58916.2023.10317863",
     "label": "Published paper",
-    "summary": "A study of emojis in sentiment analysis of financial microblogs."
+    "summary": "A study of emojis in sentiment analysis of financial microblogs.",
+    "pdf": "https://cri-lab.net/wp-content/uploads/2023/10/IEEE_IDSTA_Kuwait_2023.pdf"
   }
 ]

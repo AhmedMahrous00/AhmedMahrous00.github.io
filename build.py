@@ -8,7 +8,8 @@ def author_html(text):
  return e(text).replace("Roberto Di Pietro", '<a href="https://cemse.kaust.edu.sa/profiles/roberto-di-pietro">Roberto Di Pietro</a>')
 def paper_links(p):
  links=[]
- if p.get('url'):links.append('<a href="'+e(p.get('url') or ('papers/'+p['slug']+'/'))+'">'+e(p['label'])+'</a>')
+ if p.get('pdf'):links.append('<a href="'+e(p['pdf'])+'" target="_blank" rel="noopener">'+e(p.get('pdf_label', 'PDF'))+'</a>')
+ if p.get('url') and p['url'] != p.get('pdf'):links.append('<a href="'+e(p.get('url') or ('papers/'+p['slug']+'/'))+'">'+e(p['label'])+'</a>')
  if p.get('html'):links.append('<a href="'+e(p['html'])+'">Full-text HTML</a>')
  if p.get('code'):links.append('<a href="'+e(p['code'])+'">Code &amp; data</a>')
  return '<p>['+'] ['.join(links)+']</p>' if links else ''
@@ -30,7 +31,7 @@ teaching='''<h2 id="teaching">Teaching and service</h2><p>Teaching assistant for
 footer='<footer>Last updated: October 2026.</footer>'
 (root/'docs/index.html').write_text(page('Ahmed Mahrous — Academic Homepage',intro+'<main><h2 id="research">Research</h2><p>Selected publications and accepted papers.</p>'+entries+education+teaching+'</main>'+footer))
 cv='<p><a href="./">← Homepage</a></p><h1>Ahmed Mahrous</h1><p>Ph.D. candidate, KAUST<br><a href="mailto:ahmed.mahrous@kaust.edu.sa">ahmed.mahrous@kaust.edu.sa</a> · <a href="https://orcid.org/0000-0003-4694-5336">ORCID</a></p><p class="print-button"><button onclick="window.print()">Print / save as PDF</button></p><h2>Research interests</h2><p>Learning and strategic behavior; decentralized finance; stablecoins; market manipulation; financial social media.</p>'+education+'<h2>Selected publications and accepted papers</h2><ol>'
-for p in papers:cv+='<li>'+author_html(p['authors'])+'. <a href="'+e(p.get('url') or ('papers/'+p['slug']+'/'))+'">'+e(p['title'])+'</a>. <em>'+e(p['venue'])+'</em>, '+p['year']+'.</li>'
+for p in papers:cv+='<li>'+author_html(p['authors'])+'. <a href="'+e(p.get('url') or ('papers/'+p['slug']+'/'))+'">'+e(p['title'])+'</a>. <em>'+e(p['venue'])+'</em>, '+p['year']+'.'+paper_links(p)+'</li>'
 cv+='</ol>'+teaching+footer
 (root/'docs/cv.html').write_text(page('Ahmed Mahrous — CV',cv))
 for p in papers:
@@ -54,6 +55,9 @@ for path in (root/'docs').rglob('*.html'):
  if paper:
   schema={'@context':'https://schema.org','@type':'ScholarlyArticle','headline':paper['title'],'author':[{'@type':'Person','name':name} for name in paper['authors'].replace(', and ', ', ').replace(' and ', ', ').split(', ')],'description':paper['summary'],'url':url,'datePublished':paper['year']}
   if paper.get('url'):schema['sameAs']=paper['url']
+  if paper.get('pdf'):
+   schema['encoding']={'@type':'MediaObject','contentUrl':paper['pdf'],'encodingFormat':'application/pdf'}
+   extra+='<meta name="citation_pdf_url" content="'+e(paper['pdf'])+'">'
   extra+='<meta name="citation_title" content="'+e(paper['title'])+'"><meta name="citation_publication_date" content="'+paper['year']+'">'
   for name in schema['author']:extra+='<meta name="citation_author" content="'+e(name['name'])+'">'
   doc=doc.replace('content="Ahmed Mahrous — research on learning, strategic behavior, and decentralized financial systems at KAUST."','content="'+e(paper['summary'])+'"')
