@@ -21,7 +21,9 @@
         "label": "ICORE A*",
         "detail": "ICORE conference ranking, 2026 edition."
       }
-    ]
+    ],
+    "code": "https://github.com/AhmedMahrous00/reflexivity-threshold",
+    "code_label": "Simulation code"
   },
   {
     "slug": "stablecoins",
