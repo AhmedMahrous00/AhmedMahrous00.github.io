@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use these simulations, please cite the accompanying paper using citation.bib."
+title: "The Reflexivity Threshold: Synthetic Simulation Artifact"
+type: software
+authors:
+  - family-names: Mahrous
+    given-names: Ahmed
+    orcid: "https://orcid.org/0000-0003-4694-5336"
+  - family-names: Di Pietro
+    given-names: Roberto
+license: MIT
+url: "https://github.com/AhmedMahrous00/AhmedMahrous00.github.io/tree/main/artifacts/reflexivity-threshold"
+preferred-citation:
+  type: conference-paper
+  title: "The Reflexivity Threshold: A Phase Transition for Multi-Agent Performative Prediction"
+  authors:
+    - family-names: Mahrous
+      given-names: Ahmed
+    - family-names: Di Pietro
+      given-names: Roberto
+  year: 2026
+  conference:
+    name: "NeurIPS 2026"
+  url: "https://amahrous.com/papers/reflexivity-threshold/"
