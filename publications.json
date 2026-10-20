@@ -147,7 +147,9 @@
         "detail": "Accepted for oral presentation; oral papers are a selected subset of accepted papers.",
         "distinction": true
       }
-    ]
+    ],
+    "code": "https://doi.org/10.5281/zenodo.23376383",
+    "code_label": "Code & data"
   },
   {
     "slug": "pumpsense",
