@@ -193,9 +193,13 @@
     },
     "venue_indicators": [
       {
-        "label": "Oral \u00b7 15.5% acceptance",
-        "detail": "Oral acceptance rate: 54 oral papers out of 349 submissions at ICAIF 2025.",
+        "label": "Oral",
+        "detail": "Selected for oral presentation at ICAIF 2025.",
         "distinction": true
+      },
+      {
+        "label": "15.5% acceptance",
+        "detail": "Oral acceptance rate: 54 oral papers out of 349 submissions at ICAIF 2025."
       }
     ]
   },
