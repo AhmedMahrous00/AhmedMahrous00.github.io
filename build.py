@@ -48,8 +48,14 @@ def citation_html(p):
  return result+'<p><a href="citation.bib" download>Download .bib</a></p><pre>'+e(bibtex(p))+'</pre></section>'
 def author_html(text):
  return e(text).replace("Roberto Di Pietro", '<a href="https://cemse.kaust.edu.sa/profiles/roberto-di-pietro">Roberto Di Pietro</a>')
-def award_html(p):
- return '<p class="paper-award"><strong>'+e(p['award'])+'</strong></p>' if p.get('award') else ''
+def indicators_html(p):
+ indicators=list(p.get('venue_indicators', []))
+ if p.get('award'):
+  indicators.append({'label':p['award'], 'detail':'Award received at '+p['venue']+'.', 'distinction':True})
+ return ''.join('<span class="venue-indicator'+(' venue-distinction' if item.get('distinction') else '')+'" title="'+e(item['detail'])+'"><span class="venue-separator" aria-hidden="true"> · </span>'+e(item['label'])+'</span>' for item in indicators)
+def venue_html(p, include_year=False):
+ return '<p class="publication-venue"><em>'+e(p['venue'])+'</em>'+(' · '+p['year'] if include_year else '')+indicators_html(p)+'</p>'
+metrics_note='''<details class="venue-metrics-note"><summary>About venue metrics</summary><p>ICORE: 2026 conference ranking. ABDC: 2025 Journal Quality List. Q1: Journal Citation Reports 2025 edition. IF denotes Journal Impact Factor; figures are publisher-reported and were checked in October 2026. Acceptance rates are overall rates, except ICAIF 2025, where 15.5% refers to oral papers (54 of 349 submissions). ICAIF 2026 oral selection is shown without a rate.</p><p>Sources: <a href="https://portal.core.edu.au/conf-ranks/">ICORE</a> · <a href="https://abdc.edu.au/abdc-journal-quality-list/">ABDC</a> · <a href="https://dl.acm.org/journal/tweb">ACM TWEB</a> · <a href="https://www.sciencedirect.com/journal/international-review-of-economics-and-finance/about/insights">IREF</a> · <a href="https://www.sciencedirect.com/journal/finance-research-letters/about/insights">Finance Research Letters</a>. Conference rates and oral selections are based on conference communications.</p></details>'''
 def paper_links(p,on_paper=False):
  links=[]
  if p.get('pdf'):links.append('<a class="pdf-button" href="'+e(p['pdf'])+'" target="_blank" rel="noopener" type="application/pdf">PDF</a>')
@@ -62,10 +68,10 @@ style='''.pdf-button{display:inline-block;padding:3px 10px;border:1px solid curr
 for asset in ('theme.css', 'theme.js'):
  (root/'docs'/asset).write_text((root/asset).read_text())
 def page(title,body,prefix=''):
- return '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+e(title)+'</title><meta name="description" content="Ahmed Mahrous — research on learning, strategic behavior, and decentralized financial systems at KAUST."><meta name="color-scheme" content="light dark"><script src="'+prefix+'theme.js?v=1"></script><link rel="stylesheet" href="'+prefix+'style.css"><link rel="stylesheet" href="'+prefix+'theme.css?v=1"></head><body><div class="theme-toolbar" hidden><label for="theme-choice">Theme</label> <select id="theme-choice"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div>'+body+'</body></html>'
+ return '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+e(title)+'</title><meta name="description" content="Ahmed Mahrous — research on learning, strategic behavior, and decentralized financial systems at KAUST."><meta name="color-scheme" content="light dark"><script src="'+prefix+'theme.js?v=1"></script><link rel="stylesheet" href="'+prefix+'style.css"><link rel="stylesheet" href="'+prefix+'theme.css?v=2"></head><body><div class="theme-toolbar" hidden><label for="theme-choice">Theme</label> <select id="theme-choice"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div>'+body+'</body></html>'
 entries=''
 for p in papers:
- entries+=f'<article class="research-entry"><div class="year">{p["year"]}:</div><div><h3><a href="papers/{p["slug"]}/">{e(p["title"])}</a></h3><p>{author_html(p["authors"])}</p><p><em>{e(p["venue"])}</em></p>{award_html(p)}<p>{e(p["summary"])}</p>{paper_links(p)}</div></article>'
+ entries+=f'<article class="research-entry"><div class="year">{p["year"]}:</div><div><h3><a href="papers/{p["slug"]}/">{e(p["title"])}</a></h3><p>{author_html(p["authors"])}</p>{venue_html(p)}<p>{e(p["summary"])}</p>{paper_links(p)}</div></article>'
 intro='''<h1>Ahmed Mahrous’s homepage</h1>
 <div class="profile"><a href="assets/ahmed-mahrous.jpeg" aria-label="View portrait of Ahmed Mahrous"><img class="portrait" src="assets/ahmed-mahrous.jpeg" width="190" height="190" alt="Ahmed Mahrous"></a><p>Ahmed Mahrous<br>Ph.D. candidate in Computer Science<br><a href="https://www.kaust.edu.sa/">King Abdullah University of Science and Technology (KAUST)</a><br>Thuwal, Saudi Arabia<br><a href="mailto:ahmed.mahrous@kaust.edu.sa">ahmed.mahrous@kaust.edu.sa</a></p></div>
 <div class="bio"><p>I work on artificial intelligence and decentralized finance. I study how learning algorithms, incentives, and strategic behavior shape markets, while also exploring how AI models can make reliable predictions.</p>
@@ -79,16 +85,16 @@ education=education.replace('Ph.D. candidate in Computer Science, KAUST.', 'Ph.D
 awards='<h2 id="awards">Awards and scholarships</h2><ul><li>Best Student Paper Award, IEEE IDSTA.</li><li>CEMSE Dean’s List, KAUST.</li><li>KAUST Fellowship, fully funded doctoral fellowship.</li><li>Graduate Student Research Award (GSRA), Qatar National Research Fund, full master’s scholarship.</li><li>Order of Excellence Award, Qatar University’s highest undergraduate academic honor.</li><li>Full Undergraduate Scholarship.</li></ul>'
 teaching='''<h2 id="teaching">Teaching and service</h2><p>Teaching assistant for Introduction to Cybersecurity and Introduction to Cryptography, M.Eng. program, KAUST.</p><p>Conference reviewer: ICAIF, NeurIPS, and ICBC.</p><p>Journal reviewer: <em>Financial Innovation</em>; <em>Blockchain: Research and Applications</em>; <em>Computer Networks</em>.</p>'''
 footer='<footer>Last updated: October 2026.</footer>'
-(root/'docs/index.html').write_text(page('Ahmed Mahrous — Academic Homepage',intro+'<main><h2 id="research">Research</h2><p>Selected publications and accepted papers. <a href="publications.bib" download>Download all citations (.bib)</a>.</p>'+entries+homepage_education+awards+teaching+'</main>'+footer))
+(root/'docs/index.html').write_text(page('Ahmed Mahrous — Academic Homepage',intro+'<main><h2 id="research">Research</h2><p>Selected publications and accepted papers. <a href="publications.bib" download>Download all citations (.bib)</a>.</p>'+entries+metrics_note+homepage_education+awards+teaching+'</main>'+footer))
 cv='<p><a href="./">← Homepage</a></p><h1>Ahmed Mahrous</h1><p>Ph.D. candidate in Computer Science, KAUST<br><a href="mailto:ahmed.mahrous@kaust.edu.sa">ahmed.mahrous@kaust.edu.sa</a> · <a href="https://orcid.org/0000-0003-4694-5336">ORCID</a></p><p class="print-button"><button onclick="window.print()">Print / save as PDF</button></p><h2>Research interests</h2><p>machine learning; economics; decentralized finance.</p>'+education+awards+'<h2>Selected publications and accepted papers</h2><ol>'
-for p in papers:cv+='<li>'+author_html(p['authors'])+'. <a href="'+e(p.get('pdf') or ('papers/'+p['slug']+'/'))+'">'+e(p['title'])+'</a>. <em>'+e(p['venue'])+'</em>, '+p['year']+'.'+award_html(p)+paper_links(p)+'</li>'
-cv+='</ol>'+teaching+footer
+for p in papers:cv+='<li>'+author_html(p['authors'])+'. <a href="'+e(p.get('pdf') or ('papers/'+p['slug']+'/'))+'">'+e(p['title'])+'</a>. <em>'+e(p['venue'])+'</em>, '+p['year']+'.'+indicators_html(p)+paper_links(p)+'</li>'
+cv+='</ol>'+metrics_note+teaching+footer
 (root/'docs/cv.html').write_text(page('Ahmed Mahrous — CV',cv))
 for p in papers:
  out=root/'docs/papers'/p['slug'];out.mkdir(parents=True,exist_ok=True)
  fulltext=clean_reading_text((root/'content'/(p['slug']+'.html')).read_text())
  abstract='<section class="abstract" id="abstract"><h2>Abstract</h2>'+''.join('<p>'+e(para)+'</p>' for para in abstracts[p['slug']].split('\n\n'))+'</section>'
- body='<p><a href="../../#research">← Ahmed Mahrous’s homepage</a></p><main><article><header><h1>'+e(p['title'])+'</h1><p>'+author_html(p['authors'])+'</p><p><em>'+e(p['venue'])+'</em> · '+p['year']+'</p>'+award_html(p)+paper_links(p,on_paper=True)+'</header><section id="tldr"><h2>TL;DR</h2><p>'+e(p['summary'])+'</p></section>'+abstract+citation_html(p)+'<section id="full-text"><h2>Full text</h2><div class="paper-body">'+fulltext+'</div></section></article></main>'+footer
+ body='<p><a href="../../#research">← Ahmed Mahrous’s homepage</a></p><main><article><header><h1>'+e(p['title'])+'</h1><p>'+author_html(p['authors'])+'</p>'+venue_html(p,include_year=True)+paper_links(p,on_paper=True)+'</header><section id="tldr"><h2>TL;DR</h2><p>'+e(p['summary'])+'</p></section>'+abstract+citation_html(p)+'<section id="full-text"><h2>Full text</h2><div class="paper-body">'+fulltext+'</div></section></article></main>'+footer
  (out/'index.html').write_text(page(p['title']+' — Ahmed Mahrous',body,'../../'))
  (out/'citation.bib').write_text(bibtex(p))
 (root/'docs/publications.bib').write_text('\n'.join(bibtex(p) for p in papers))

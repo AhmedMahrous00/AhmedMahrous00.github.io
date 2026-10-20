@@ -15,7 +15,13 @@
       "booktitle": "Advances in Neural Information Processing Systems",
       "note": "Accepted at NeurIPS 2026",
       "source": "https://cri-lab.net/wp-content/uploads/2026/09/main-1.pdf"
-    }
+    },
+    "venue_indicators": [
+      {
+        "label": "ICORE A*",
+        "detail": "ICORE conference ranking, 2026 edition."
+      }
+    ]
   },
   {
     "slug": "stablecoins",
@@ -38,7 +44,21 @@
       "pages": "105665",
       "eid": "105665",
       "source": "https://api.crossref.org/works/10.1016/j.iref.2026.105665"
-    }
+    },
+    "venue_indicators": [
+      {
+        "label": "ABDC A",
+        "detail": "ABDC Journal Quality List, 2025 edition."
+      },
+      {
+        "label": "IF 7.6",
+        "detail": "Journal Impact Factor reported by the publisher; accessed October 2026."
+      },
+      {
+        "label": "15% acceptance",
+        "detail": "Overall journal acceptance rate reported by the publisher; accessed October 2026."
+      }
+    ]
   },
   {
     "slug": "finmoji",
@@ -61,7 +81,17 @@
       "number": "3",
       "pages": "1-30",
       "source": "https://api.crossref.org/works/10.1145/3829331"
-    }
+    },
+    "venue_indicators": [
+      {
+        "label": "Q1",
+        "detail": "Journal Citation Reports, 2025 edition: Computer Science, Information Systems."
+      },
+      {
+        "label": "IF 4.9",
+        "detail": "Journal Impact Factor reported by ACM, Journal Citation Reports 2025 edition."
+      }
+    ]
   },
   {
     "slug": "cross-cultural-emojis",
@@ -89,7 +119,7 @@
     "year": "2026",
     "title": "What prediction-market contracts reveal at launch: Trading volume and dispute risk",
     "authors": "Ahmed Mahrous and Roberto Di Pietro",
-    "venue": "ACM International Conference on AI in Finance (ICAIF 2026) \u00b7 Accepted",
+    "venue": "ACM International Conference on AI in Finance (ICAIF 2026)",
     "url": "https://doi.org/10.1145/3858063.3858742",
     "label": null,
     "summary": "We study whether information available when Polymarket contracts launch can predict trading activity and dispute risk.",
@@ -103,7 +133,14 @@
       "isbn": "979-8-4007-3087-0",
       "note": "Accepted at ICAIF 2026",
       "source": "https://cri-lab.net/wp-content/uploads/2026/10/ICAIF_2026_camera_ready-1.pdf"
-    }
+    },
+    "venue_indicators": [
+      {
+        "label": "Oral",
+        "detail": "Accepted for oral presentation; oral papers are a selected subset of accepted papers.",
+        "distinction": true
+      }
+    ]
   },
   {
     "slug": "pumpsense",
@@ -126,7 +163,13 @@
       "booktitle": "2026 IEEE International Conference on Blockchain and Cryptocurrency (ICBC)",
       "pages": "1-9",
       "source": "https://api.crossref.org/works/10.1109/icbc67748.2026.11575494"
-    }
+    },
+    "venue_indicators": [
+      {
+        "label": "18% acceptance",
+        "detail": "Overall paper acceptance rate for ICBC 2026."
+      }
+    ]
   },
   {
     "slug": "tstr-financial-fraud",
@@ -147,7 +190,14 @@
       "booktitle": "Proceedings of the 6th ACM International Conference on AI in Finance",
       "pages": "71-79",
       "source": "https://api.crossref.org/works/10.1145/3768292.3770393"
-    }
+    },
+    "venue_indicators": [
+      {
+        "label": "Oral \u00b7 15.5% acceptance",
+        "detail": "Oral acceptance rate: 54 oral papers out of 349 submissions at ICAIF 2025.",
+        "distinction": true
+      }
+    ]
   },
   {
     "slug": "stablecoin-sok",
@@ -168,7 +218,13 @@
       "booktitle": "2025 IEEE International Conference on Blockchain and Cryptocurrency (ICBC)",
       "pages": "1-21",
       "source": "https://api.crossref.org/works/10.1109/icbc64466.2025.11114650"
-    }
+    },
+    "venue_indicators": [
+      {
+        "label": "18.2% acceptance",
+        "detail": "Overall paper acceptance rate for ICBC 2025."
+      }
+    ]
   },
   {
     "slug": "nft-aesthetics",
@@ -212,7 +268,17 @@
       "pages": "105861",
       "eid": "105861",
       "source": "https://api.crossref.org/works/10.1016/j.frl.2024.105861"
-    }
+    },
+    "venue_indicators": [
+      {
+        "label": "ABDC A",
+        "detail": "ABDC Journal Quality List, 2025 edition."
+      },
+      {
+        "label": "IF 7.1",
+        "detail": "Journal Impact Factor reported by the publisher; accessed October 2026."
+      }
+    ]
   },
   {
     "slug": "financial-microblog-emojis",

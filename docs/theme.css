@@ -50,6 +50,14 @@ pre { color: var(--text); background: var(--surface); }
 .pdf-button:hover { background: var(--surface); }
 .paper-body img { background: #fff; box-sizing: border-box; padding: 6px; border-radius: 2px; }
 .paper-body th { background: var(--surface); }
+.publication-venue { color: var(--secondary); font-size: .94em; }
+.venue-indicator { display: inline-block; white-space: nowrap; color: var(--secondary); font-size: .94em; }
+.publication-venue .venue-indicator { font-size: 1em; }
+.venue-separator { margin: 0 .15em; font-weight: normal; color: var(--secondary); }
+.venue-distinction { color: var(--link); font-weight: 600; }
+.venue-metrics-note { color: var(--secondary); font-size: .85em; max-width: 82ch; margin: 1.4em 0 2em; }
+.venue-metrics-note summary { cursor: pointer; width: fit-content; }
+.venue-metrics-note p { margin: .6em 0; }
 @media (max-width: 600px) {
   body { font-size: 18px; }
   .theme-toolbar { margin-bottom: .4em; }
@@ -59,7 +67,9 @@ pre { color: var(--text); background: var(--surface); }
   :root { color-scheme: light; }
   html, body { color: #000 !important; background: #fff !important; }
   body { font-size: 11pt; line-height: 1.45; }
-  .theme-toolbar { display: none !important; }
+  .theme-toolbar, .venue-metrics-note { display: none !important; }
+  .publication-venue, .venue-indicator, .venue-separator, .venue-distinction { color: #000; }
+  li { break-inside: avoid; }
   a, a:visited, footer, .paper-body figcaption, .source-footnote { color: #000; }
   pre, .paper-body th { color: #000; background: #f6f6f6; }
   button, select { color: #000; background: #fff; }
