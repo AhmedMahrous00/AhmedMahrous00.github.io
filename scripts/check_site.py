@@ -33,6 +33,13 @@ for paper in papers:
         assert not soup.select('#full-text script, #full-text iframe, #full-text object'), (slug, 'active source content')
     else:
         assert len(soup.select('#full-text .source-page')) == len(pdf), (slug, 'page coverage')
+    if soup.select_one('#full-text .native-passages'):
+        assert not soup.select('#full-text .math-excerpt'), (slug, 'text/math screenshot remains')
+        for math in soup.select('#full-text math'):
+            assert math.select_one('annotation[encoding="application/x-tex"]'), (slug, 'math source missing')
+        numbers = [n.get_text() for n in soup.select('.equation-number')]
+        if slug == 'reflexivity-threshold':
+            assert numbers == [f'({i})' for i in range(1,17)], (slug, 'equation numbering')
     assert len(soup.select('#full-text h3')) > 2, (slug, 'section headings')
     assert 'references' in soup.select_one('#full-text').get_text().lower(), (slug, 'references')
     assert soup.select_one('meta[name=citation_pdf_url]')['content'] == 'https://amahrous.com/papers/'+slug+'/paper.pdf', slug

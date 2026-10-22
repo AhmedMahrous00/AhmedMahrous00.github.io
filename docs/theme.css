@@ -7,6 +7,8 @@
   --visited: #684A86;
   --surface: #F0EDE6;
   --border: #9B9993;
+  --figure-blend: multiply;
+  --figure-filter: none;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -18,6 +20,8 @@
     --visited: #CAB3EF;
     --surface: #28282B;
     --border: #76767C;
+    --figure-blend: screen;
+    --figure-filter: invert(1) hue-rotate(180deg) brightness(.9);
   }
 }
 :root[data-theme="dark"] {
@@ -29,6 +33,8 @@
   --visited: #CAB3EF;
   --surface: #28282B;
   --border: #76767C;
+  --figure-blend: screen;
+  --figure-filter: invert(1) hue-rotate(180deg) brightness(.9);
 }
 html, body { background: var(--background); color: var(--text); }
 body { font-size: 18px; line-height: 1.6; }
@@ -48,7 +54,13 @@ footer, .paper-body figcaption, .source-footnote { color: var(--secondary); }
 footer, .paper-body th, .paper-body td { border-color: var(--border); }
 pre { color: var(--text); background: var(--surface); }
 .pdf-button:hover { background: var(--surface); }
-.paper-body img { background: #fff; box-sizing: border-box; padding: 6px; border-radius: 2px; }
+.paper-body { isolation: isolate; background: var(--background); }
+.paper-body img { display: inline-block; vertical-align: middle; background: transparent; box-sizing: border-box; padding: 0; border-radius: 0; mix-blend-mode: var(--figure-blend); filter: var(--figure-filter); }
+.paper-equation { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: .8em; margin: 1.2em 0; }
+.paper-figure > img { width: 100%; height: auto; }
+.paper-equation > math[display="block"] { min-width: 0; max-width: 100%; margin: 0; overflow-x: auto; overflow-y: hidden; padding: .5em 0; }
+.equation-number { color: var(--secondary); white-space: nowrap; }
+.text-example { margin: 1em 0; padding: .2em 1em; border-left: 2px solid var(--border); }
 .paper-body th { background: var(--surface); }
 .publication-venue { color: var(--secondary); font-size: .94em; }
 .venue-indicator { display: inline-block; white-space: nowrap; color: var(--secondary); font-size: .94em; }
@@ -73,4 +85,6 @@ pre { color: var(--text); background: var(--surface); }
   a, a:visited, footer, .paper-body figcaption, .source-footnote { color: #000; }
   pre, .paper-body th { color: #000; background: #f6f6f6; }
   button, select { color: #000; background: #fff; }
+  .paper-body img { filter: none; mix-blend-mode: normal; }
+  .paper-body { background: #fff; }
 }

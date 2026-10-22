@@ -18,4 +18,6 @@ To regenerate PDF-derived full text after replacing a manuscript, install `requi
 
 Run `python3 scripts/check_site.py` before publishing to verify article content, equations, citations, figures, and local links.
 
+Text and math crops in Reflexivity Threshold and Financial Microblog Emojis have been replaced with native HTML and MathML. `scripts/native_paper_passages.py` records the PDF-checked transcriptions and can apply them to the original extracted fragments. The source PDFs and scientific wording are unchanged. Figures blend into the active page theme through CSS; printing retains the original graphic colors.
+
 Commit the updated source and `docs/` files. GitHub Pages deploys branch **main**, folder **/docs**.
