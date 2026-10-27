@@ -73,7 +73,7 @@ style='''.pdf-button{display:inline-block;padding:3px 10px;border:1px solid curr
 for asset in ('theme.css', 'theme.js'):
  (root/'docs'/asset).write_text((root/asset).read_text())
 def page(title,body,prefix=''):
- return '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+e(title)+'</title><meta name="description" content="Ahmed Mahrous — research on learning, strategic behavior, and decentralized financial systems at KAUST."><meta name="color-scheme" content="light dark"><script src="'+prefix+'theme.js?v=1"></script><link rel="stylesheet" href="'+prefix+'style.css"><link rel="stylesheet" href="'+prefix+'theme.css?v=3"></head><body><div class="theme-toolbar" hidden><label for="theme-choice">Theme</label> <select id="theme-choice"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div>'+body+'</body></html>'
+ return '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+e(title)+'</title><meta name="description" content="Ahmed Mahrous: research on learning, strategic behavior, and decentralized financial systems at KAUST."><meta name="color-scheme" content="light dark"><script src="'+prefix+'theme.js?v=1"></script><link rel="stylesheet" href="'+prefix+'style.css"><link rel="stylesheet" href="'+prefix+'theme.css?v=3"></head><body><div class="theme-toolbar" hidden><label for="theme-choice">Theme</label> <select id="theme-choice"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div>'+body+'</body></html>'
 entries=''
 for p in papers:
  entries+=f'<article class="research-entry"><div class="year">{p["year"]}:</div><div><h3><a href="papers/{p["slug"]}/">{e(p["title"])}</a></h3><p>{author_html(p["authors"])}</p>{venue_html(p)}<p>{e(p["summary"])}</p>{paper_links(p)}</div></article>'
@@ -90,17 +90,17 @@ education=education.replace('Ph.D. candidate in Computer Science, KAUST.', 'Ph.D
 awards='<h2 id="awards">Awards and scholarships</h2><ul><li>Best Student Paper Award, IEEE IDSTA.</li><li>CEMSE Dean’s List, KAUST.</li><li>KAUST Fellowship, fully funded doctoral fellowship.</li><li>Graduate Student Research Award (GSRA), Qatar National Research Fund, full master’s scholarship.</li><li>Order of Excellence Award, Qatar University’s highest undergraduate academic honor.</li><li>Full Undergraduate Scholarship.</li></ul>'
 teaching='''<h2 id="teaching">Teaching and service</h2><p>Teaching assistant for Introduction to Cybersecurity and Introduction to Cryptography, M.Eng. program, KAUST.</p><p>Conference reviewer: ICAIF, NeurIPS, and ICBC.</p><p>Journal reviewer: <em>Financial Innovation</em>; <em>Blockchain: Research and Applications</em>; <em>Computer Networks</em>.</p>'''
 footer='<footer>Last updated: October 2026.</footer>'
-(root/'docs/index.html').write_text(page('Ahmed Mahrous — Academic Homepage',intro+'<main><h2 id="research">Research</h2><p>Selected publications and accepted papers. <a href="publications.bib" download>Download all citations (.bib)</a>.</p>'+entries+metrics_note+homepage_education+awards+teaching+'</main>'+footer))
+(root/'docs/index.html').write_text(page('Ahmed Mahrous | Academic Homepage',intro+'<main><h2 id="research">Research</h2><p>Selected publications and accepted papers. <a href="publications.bib" download>Download all citations (.bib)</a>.</p>'+entries+metrics_note+homepage_education+awards+teaching+'</main>'+footer))
 cv='<p><a href="./">← Homepage</a></p><h1>Ahmed Mahrous</h1><p>Ph.D. candidate in Computer Science, KAUST<br><a href="mailto:ahmed.mahrous@kaust.edu.sa">ahmed.mahrous@kaust.edu.sa</a> · <a href="https://orcid.org/0000-0003-4694-5336">ORCID</a></p><p class="print-button"><button onclick="window.print()">Print / save as PDF</button></p><h2>Research interests</h2><p>machine learning; economics; decentralized finance.</p>'+education+awards+'<h2>Selected publications and accepted papers</h2><ol>'
 for p in papers:cv+='<li>'+author_html(p['authors'])+'. <a href="'+e(p.get('pdf') or ('papers/'+p['slug']+'/'))+'">'+e(p['title'])+'</a>. <em>'+e(p['venue'])+'</em>, '+p['year']+'.'+indicators_html(p)+paper_links(p)+'</li>'
 cv+='</ol>'+metrics_note+teaching+footer
-(root/'docs/cv.html').write_text(page('Ahmed Mahrous — CV',cv))
+(root/'docs/cv.html').write_text(page('Ahmed Mahrous | CV',cv))
 for p in papers:
  out=root/'docs/papers'/p['slug'];out.mkdir(parents=True,exist_ok=True)
  fulltext=clean_reading_text((root/'content'/(p['slug']+'.html')).read_text())
  abstract='<section class="abstract" id="abstract"><h2>Abstract</h2>'+''.join('<p>'+e(para)+'</p>' for para in abstracts[p['slug']].split('\n\n'))+'</section>'
  body='<p><a href="../../#research">← Ahmed Mahrous’s homepage</a></p><main><article><header><h1>'+e(p['title'])+'</h1><p>'+author_html(p['authors'])+'</p>'+venue_html(p,include_year=True)+paper_links(p,on_paper=True)+'</header><section id="tldr"><h2>TL;DR</h2><p>'+e(p['summary'])+'</p></section>'+abstract+citation_html(p)+'<section id="full-text"><h2>Full text</h2><div class="paper-body">'+fulltext+'</div></section></article></main>'+footer
- (out/'index.html').write_text(page(p['title']+' — Ahmed Mahrous',body,'../../'))
+ (out/'index.html').write_text(page(p['title']+' | Ahmed Mahrous',body,'../../'))
  (out/'citation.bib').write_text(bibtex(p))
 (root/'docs/publications.bib').write_text('\n'.join(bibtex(p) for p in papers))
 print('Built homepage, printable CV, and',len(papers),'paper pages.')
@@ -142,7 +142,7 @@ for path in (root/'docs').rglob('*.html'):
   if b.get('volume'):schema['volumeNumber']=b['volume']
   if b.get('number'):schema['issueNumber']=b['number']
   if b.get('pages'):schema['pagination']=b['pages']
-  doc=doc.replace('content="Ahmed Mahrous — research on learning, strategic behavior, and decentralized financial systems at KAUST."','content="'+e(paper['summary'])+'"')
+  doc=doc.replace('content="Ahmed Mahrous: research on learning, strategic behavior, and decentralized financial systems at KAUST."','content="'+e(paper['summary'])+'"')
  else:
   schema={'@context':'https://schema.org','@type':'ProfilePage','url':url,'mainEntity':{'@type':'Person','@id':'https://orcid.org/0000-0003-4694-5336','name':'Ahmed Mahrous','url':base+'/','affiliation':{'@type':'Organization','name':'King Abdullah University of Science and Technology'},'sameAs':['https://orcid.org/0000-0003-4694-5336','https://scholar.google.com/citations?user=kOy2h6EAAAAJ','https://github.com/AhmedMahrous00']}}
  extra+='<script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('<','\u003c')+'</script>'
