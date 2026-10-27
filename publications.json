@@ -5,16 +5,16 @@
     "title": "The reflexivity threshold: A phase transition for multi-agent performative prediction",
     "authors": "Ahmed Mahrous and Roberto Di Pietro",
     "venue": "NeurIPS 2026 \u00b7 Accepted",
-    "url": "https://cri-lab.net/wp-content/uploads/2026/09/main-1.pdf",
+    "url": "https://arxiv.org/abs/2610.29577",
     "label": "PDF",
-    "summary": "In multi-agent performative prediction, network feedback determines whether retraining converges. Under the stated sensitivity and curvature assumptions, a reflexivity matrix with spectral radius below one guarantees convergence; above one, we construct systems where every local-information learner suffers linearly growing cumulative excess loss.",
+    "summary": "Under the stated sensitivity and curvature assumptions, a reflexivity matrix with spectral radius below one guarantees convergence of repeated retraining. Above one, we construct noisy systems where every local-information learner incurs expected cumulative excess loss growing linearly for horizons up to order 1/(\u03c1(\u0393) \u2212 1).",
     "pdf": "/papers/reflexivity-threshold/paper.pdf",
-    "pdf_source": "https://cri-lab.net/wp-content/uploads/2026/09/main-1.pdf",
+    "pdf_source": "https://arxiv.org/pdf/2610.29577v1",
     "citation": {
       "type": "inproceedings",
       "booktitle": "Advances in Neural Information Processing Systems",
       "note": "Accepted at NeurIPS 2026",
-      "source": "https://cri-lab.net/wp-content/uploads/2026/09/main-1.pdf"
+      "source": "https://arxiv.org/abs/2610.29577"
     },
     "venue_indicators": [
       {
@@ -23,7 +23,8 @@
       }
     ],
     "code": "https://github.com/AhmedMahrous00/reflexivity-threshold",
-    "code_label": "Simulation code"
+    "code_label": "Simulation code",
+    "arxiv": "https://arxiv.org/abs/2610.29577"
   },
   {
     "slug": "stablecoins",
@@ -149,7 +150,8 @@
       }
     ],
     "code": "https://doi.org/10.5281/zenodo.23376383",
-    "code_label": "Code & data"
+    "code_label": "Code & data",
+    "arxiv": "https://arxiv.org/abs/2610.29578"
   },
   {
     "slug": "pumpsense",

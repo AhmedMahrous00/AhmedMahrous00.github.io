@@ -18,6 +18,8 @@ To regenerate PDF-derived full text after replacing a manuscript, install `requi
 
 Run `python3 scripts/check_site.py` before publishing to verify article content, equations, citations, figures, and local links.
 
+Reflexivity Threshold's PDF and native HTML are synchronized with arXiv `2610.29577v1`. To repeat that import, cache the versioned HTML, PDF and TeX archive as `reflexivity.html`, `reflexivity.pdf` and `reflexivity.tar`, then run `python3 scripts/import_reflexivity_arxiv.py <cache-directory>` and rebuild. The source version and checksums are recorded in `content/native-reflexivity-threshold.json`.
+
 Text and math crops in Reflexivity Threshold and Financial Microblog Emojis have been replaced with native HTML and MathML. `scripts/native_paper_passages.py` records the PDF-checked transcriptions and can apply them to the original extracted fragments. The source PDFs and scientific wording are unchanged. Figures blend into the active page theme through CSS; printing retains the original graphic colors.
 
 Commit the updated source and `docs/` files. GitHub Pages deploys branch **main**, folder **/docs**.

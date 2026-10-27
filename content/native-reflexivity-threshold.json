@@ -1,0 +1,34 @@
+{
+  "html_source": "https://arxiv.org/html/2610.29577v1",
+  "pdf_source": "https://arxiv.org/pdf/2610.29577v1",
+  "tex_source": "https://arxiv.org/src/2610.29577v1",
+  "pdf_sha256": "8dd9cd5e5b802e5f885c12e3c8433f11c522b616f6551630220ada422928440d",
+  "math_count": 506,
+  "section_ids": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "Sx1",
+    "bib",
+    "A1",
+    "A2",
+    "A3",
+    "Ax1"
+  ],
+  "assets": [
+    {
+      "path": "docs/papers/reflexivity-threshold/figures/fig_iteration_complexity.svg",
+      "source": "fig_iteration_complexity.pdf",
+      "sha256": "a19f8ec93115e0a7f38ff920b810e8da2965f07596ce463b2a99a48627f85939"
+    },
+    {
+      "path": "docs/papers/reflexivity-threshold/figures/fig_rho_sweep_five_lines.svg",
+      "source": "fig_rho_sweep_five_lines.pdf",
+      "sha256": "f56020fc3f65d78930aa77d9af0a31a9962fc8eeac3e1973f4475a81184993fb"
+    }
+  ]
+}
