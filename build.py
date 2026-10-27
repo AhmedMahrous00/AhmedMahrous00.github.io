@@ -77,7 +77,7 @@ def page(title,body,prefix=''):
 entries=''
 for p in papers:
  entries+=f'<article class="research-entry"><div class="year">{p["year"]}:</div><div><h3><a href="papers/{p["slug"]}/">{e(p["title"])}</a></h3><p>{author_html(p["authors"])}</p>{venue_html(p)}<p>{e(p["summary"])}</p>{paper_links(p)}</div></article>'
-intro='''<h1>Ahmed Mahrous’s homepage</h1>
+intro='''
 <div class="profile"><a href="assets/ahmed-mahrous.jpeg" aria-label="View portrait of Ahmed Mahrous"><img class="portrait" src="assets/ahmed-mahrous.jpeg" width="190" height="190" alt="Ahmed Mahrous"></a><p>Ahmed Mahrous<br>Ph.D. candidate in Computer Science<br><a href="https://www.kaust.edu.sa/">King Abdullah University of Science and Technology (KAUST)</a><br>Thuwal, Saudi Arabia<br><a href="mailto:ahmed.mahrous@kaust.edu.sa">ahmed.mahrous@kaust.edu.sa</a></p></div>
 <div class="bio"><p>I work on artificial intelligence and decentralized finance. I study how learning algorithms, incentives, and strategic behavior shape markets, while also exploring how AI models can make reliable predictions.</p>
 <p>I am a Ph.D. candidate in Computer Science at KAUST, advised by <a href="https://cemse.kaust.edu.sa/profiles/roberto-di-pietro">Roberto Di Pietro</a>. My research combines mathematical modeling, empirical analysis, and machine learning, with work on AI methodology as well as applications to stablecoins, prediction markets, financial manipulation detection, and investor sentiment.</p></div>
