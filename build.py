@@ -27,7 +27,7 @@ def bibtex(p):
  fields={'author':' and '.join(names),'title':p['title'],'year':p['year']}
  fields.update({k:v for k,v in b.items() if k not in ('type','source','date')})
  if b.get('doi'):fields['url']='https://doi.org/'+b['doi']
- else:fields['url']='https://amahrous.com/papers/'+p['slug']+'/'
+ else:fields['url']=p.get('arxiv') or 'https://amahrous.com/papers/'+p['slug']+'/'
  lines=[]
  for k,v in fields.items():
   v=str(v).replace('&',r'\&')
@@ -139,6 +139,9 @@ for path in (root/'docs').rglob('*.html'):
    if len(pages)>1:extra+='<meta name="citation_lastpage" content="'+e(pages[-1])+'">'
   extra+='<link rel="alternate" type="application/x-bibtex" href="'+url+'citation.bib" title="BibTeX citation">'
   if b.get('doi'):schema['identifier']={'@type':'PropertyValue','propertyID':'DOI','value':b['doi']};schema['sameAs']='https://doi.org/'+b['doi']
+  if paper.get('arxiv'):
+   extra+='<meta name="citation_arxiv_id" content="'+e(paper['arxiv'].rsplit('/',1)[-1])+'">'
+   schema['sameAs']=list(dict.fromkeys([schema.get('sameAs'),paper['arxiv']]))
   schema['isPartOf']={'@type':'Periodical' if b.get('journal') else 'CreativeWork','name':b.get('journal',b.get('booktitle'))}
   if b.get('volume'):schema['volumeNumber']=b['volume']
   if b.get('number'):schema['issueNumber']=b['number']

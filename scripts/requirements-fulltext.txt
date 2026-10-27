@@ -3,3 +3,4 @@ pymupdf4llm==1.28.2
 Markdown==3.11.1
 beautifulsoup4==4.15.0
 Pillow>=10
+lxml>=5
