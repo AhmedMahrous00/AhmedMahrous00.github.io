@@ -7,8 +7,8 @@
     padding: 0;
     max-width: none;
     font-family: "Times New Roman", Times, serif;
-    font-size: 11pt;
-    line-height: 1.18;
+    font-size: 12pt;
+    line-height: 1.25;
   }
   .cv-screen, .cv-page > .site-nav, .cv-page > .theme-toolbar { display: none !important; }
   .cv-print { display: block; }
@@ -16,13 +16,13 @@
   .cv-header { padding-bottom: 5pt; border-bottom: 1pt solid #222; }
   .cv-header h1 { margin: 0 0 3pt; font-size: 23pt; line-height: 1; }
   .cv-header p { margin: 2pt 0 0; }
-  .cv-print h2 { margin: 8pt 0 3pt; font-size: 11.5pt; line-height: 1.1; break-after: avoid; }
+  .cv-print h2 { margin: 10pt 0 4pt; font-size: 12.5pt; line-height: 1.1; break-after: avoid; }
   .cv-print p { margin: 2pt 0; }
   .cv-print ul, .cv-print ol { margin: 2pt 0 0; padding-left: 15pt; }
   .cv-print li { margin: 2pt 0; break-inside: avoid; }
   /* Keep both digits inside the item box; Safari PDF can clip outside markers. */
   .cv-print ol { padding-left: 0; list-style: none; }
-  .cv-print ol li { position: relative; margin: 3pt 0; padding-left: 24pt; }
+  .cv-print ol li { position: relative; margin: 5pt 0; padding-left: 24pt; }
   .cv-number { position: absolute; left: 0; top: 0; width: 18pt; text-align: right; }
   .cv-print ol li > a { font-weight: bold; }
   .cv-venue { display: block; font-style: italic; }
