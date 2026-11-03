@@ -45,7 +45,7 @@ def citation_html(p):
  result='<section id="citation"><h2>Citation</h2><p>'+e(text)
  if b.get('doi'):result+=' <a href="https://doi.org/'+e(b['doi'])+'">doi:'+e(b['doi'])+'</a>.'
  result+='</p>'
- return result+'<p><a href="citation.bib" download>Download .bib</a></p><pre>'+e(bibtex(p))+'</pre></section>'
+ return result+'<pre>'+e(bibtex(p))+'</pre></section>'
 def author_html(text):
  return e(text).replace("Roberto Di Pietro", '<a href="https://cemse.kaust.edu.sa/profiles/roberto-di-pietro">Roberto Di Pietro</a>')
 def indicators_html(p):
@@ -66,11 +66,11 @@ def paper_links(p,on_paper=False):
   resources.extend([('arXiv', p.get('arxiv')), (p.get('code_label', 'Code'), p.get('code')), ('Data', p.get('data')), (p.get('archive_label', 'Archive'), p.get('archive'))])
   for label,url in resources:
    if url:links.append('<a href="'+e(url)+'">'+e(label)+'</a>')
- links.append('<a href="'+prefix+'#citation">'+('Cite' if on_paper else 'BibTeX')+'</a>')
+ if on_paper:links.append('<a href="#citation">Cite</a>')
  return '<p>'+' · '.join(links)+'</p>'
 style='''.site-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:.35em 0 .75em;border-bottom:1px solid #ddd;margin-bottom:1.4em}.site-name{font-weight:700;text-decoration:none;color:inherit!important}.site-links{display:flex;gap:6px 19px;flex-wrap:wrap}.site-links a{font-size:.92em;text-decoration:none;color:inherit!important}.site-links a:hover{text-decoration:underline}@media(max-width:600px){.site-nav{align-items:flex-start;gap:8px}.site-links{gap:7px 15px}}@media print{.site-nav{display:none}}.pdf-button{display:inline-block;padding:3px 10px;border:1px solid currentColor;border-radius:3px;text-decoration:none;font-size:.9em}.pdf-button:hover{background:#f0f0ff}.profile{display:flex;align-items:center;gap:24px;margin:1.2em 0}.profile p{margin:0}.portrait{display:block;width:190px;height:190px;object-fit:cover}@media(max-width:480px){.profile{align-items:flex-start;flex-direction:column;gap:14px}}html{color-scheme:light}body{margin:24px auto;padding:0 24px;max-width:1040px;font-family:"Times New Roman",Times,serif;font-size:17px;line-height:1.43;color:#111;background:white}h1{font-size:2em;line-height:1.15;margin:0.67em 0}h2{font-size:1.5em;margin:1.3em 0 .5em}h3{font-size:1.08em;margin:0 0 .15em}a{color:#0000ee;text-decoration:underline}a:visited{color:#551a8b}a:focus-visible{outline:2px solid #000;outline-offset:3px}p{margin:.7em 0}nav{margin:1.2em 0}.research-entry{display:grid;grid-template-columns:72px 1fr;gap:16px;margin:1.3em 0 1.6em}.research-entry p{margin:.22em 0}.year{padding-top:1px}.bio{max-width:900px}footer{border-top:1px solid #bbb;margin:2.5em 0 1em;padding-top:.6em;font-size:.88em;color:#444}ul{padding-left:24px}li{margin:.35em 0}@media(max-width:600px){body{padding:0 16px;margin:18px auto;font-size:16px}.research-entry{grid-template-columns:1fr;gap:3px}.year{font-weight:bold}h1{font-size:1.8em}}@media print{body{max-width:none;margin:0;font-size:11pt}.print-button,nav{display:none}a{color:inherit}footer{display:none}.research-entry{break-inside:avoid}}'''
 (root/'docs/style.css').write_text(style+'''\npre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.82em;padding:1em;background:#f6f6f6}#citation{margin-top:2em}.paper-body{max-width:900px;margin:0 auto}.paper-body p{text-align:left}.paper-body img{max-width:100%;height:auto}.paper-body figure{margin:1.3em 0}.paper-body figcaption{font-size:.88em;color:#444}.source-page{margin-top:1.8em}.math-excerpt{text-align:center}.table-scroll{overflow-x:auto}.source-footnote{font-size:.85em}.paper-body table{display:block;overflow:auto;max-width:100%;border-collapse:collapse;font-size:.9em}.paper-body th,.paper-body td{padding:.35em .6em;border:1px solid #ccc}.paper-body h2,.paper-body h3,.paper-body h4{margin-top:1.4em}.paper-body h3{font-size:1.2em}.paper-body a{overflow-wrap:anywhere}.paper-body section{scroll-margin-top:1em}.paper-nav{font-size:.95em}.abstract{max-width:900px}.paper-body math{font-family:math}.paper-body math[display="block"]{display:block;overflow-x:auto;overflow-y:hidden;padding:.4em 0}.paper-body .ltx_equation,.paper-body .ltx_equationgroup{overflow-x:auto;margin:1em 0}.paper-body .ltx_eqn_table{display:table;width:100%;border:0}.paper-body .ltx_eqn_table td{border:0;padding:.15em .25em;vertical-align:middle}.paper-body .ltx_eqn_eqno{white-space:nowrap;text-align:right}.paper-body .ltx_eqn_center_padleft,.paper-body .ltx_eqn_center_padright{width:50%}.paper-body .ltx_eqn_cell{white-space:nowrap}.paper-body .ltx_figure{text-align:center}.paper-body .ltx_figure figcaption{text-align:left}.paper-body .ltx_graphics{max-width:100%;height:auto}.paper-body .ltx_tabular{margin:.6em auto}.paper-body .ltx_biblist{padding-left:1.7em}.paper-body .ltx_bibitem{margin:.6em 0}.paper-body .ltx_ref_tag{white-space:nowrap}.paper-body h5,.paper-body h6{font-size:1em;margin:1.2em 0 .4em}.paper-body .ltx_title{line-height:1.25}.paper-body .ltx_item{list-style:none;position:relative}.paper-body .ltx_item>.ltx_tag_item{position:absolute;right:calc(100% + .5em);top:0;white-space:nowrap}html{scroll-padding-top:1em}@media(max-width:600px){.paper-body{overflow-wrap:anywhere}.paper-body figure{margin:1em 0}}\n''')
-for asset in ('theme.css', 'theme.js'):
+for asset in ('theme.css', 'theme.js', 'cv.css'):
  (root/'docs'/asset).write_text((root/asset).read_text())
 site_nav="<nav class=\"site-nav\" aria-label=\"Primary navigation\"><a class=\"site-name\" href=\"{HOME}\">Ahmed Mahrous</a><div class=\"site-links\"><a href=\"{HOME}#research\">Research</a><a href=\"{HOME}#education\">Education</a><a href=\"{HOME}#awards\">Awards</a><a href=\"{HOME}#teaching\">Service</a><a href=\"{HOME}cv.html\">CV</a></div></nav>"
 def page(title,body,prefix=''):
@@ -95,7 +95,27 @@ footer='<footer>Last updated: October 2026.</footer>'
 cv='<p><a href="./">← Homepage</a></p><h1>Ahmed Mahrous</h1><p>Ph.D. candidate in Computer Science, KAUST<br><a href="mailto:ahmed.mahrous@kaust.edu.sa">ahmed.mahrous@kaust.edu.sa</a> · <a href="https://orcid.org/0000-0003-4694-5336">ORCID</a></p><p class="print-button"><button onclick="window.print()">Print / save as PDF</button></p><h2>Research interests</h2><p>machine learning; economics; decentralized finance.</p>'+education+awards+'<h2>Selected publications and accepted papers</h2><ol>'
 for p in papers:cv+='<li>'+author_html(p['authors'])+'. <a href="'+e(p.get('pdf') or ('papers/'+p['slug']+'/'))+'">'+e(p['title'])+'</a>. <em>'+e(p['venue'])+'</em>, '+p['year']+'.'+indicators_html(p)+paper_links(p)+'</li>'
 cv+='</ol>'+metrics_note+teaching+footer
-(root/'docs/cv.html').write_text(page('Ahmed Mahrous | CV',cv))
+# The compact print view uses the same publication and profile sources as the full CV.
+cv_venues={
+ 'reflexivity-threshold':'NeurIPS 2026',
+ 'stablecoins':'International Review of Economics & Finance, 2026',
+ 'finmoji':'ACM Transactions on the Web, 2026',
+ 'cross-cultural-emojis':'Findings of ACL 2026',
+ 'prediction-market-launch':'ICAIF 2026 · Oral',
+ 'pumpsense':'IEEE ICBC 2026',
+ 'tstr-financial-fraud':'ICAIF 2025 · Oral',
+ 'stablecoin-sok':'IEEE ICBC 2025',
+ 'nft-aesthetics':'BCCA 2025',
+ 'pump-and-dump':'Finance Research Letters, 2024',
+ 'financial-microblog-emojis':'IEEE IDSTA 2023 · Best Student Paper Award',
+}
+cv_publications=''.join('<li><a href="'+e(p.get('pdf') or ('papers/'+p['slug']+'/'))+'">'+e(p['title'])+'</a><span class="cv-venue">'+e(cv_venues[p['slug']])+'</span></li>' for p in papers)
+cv_print='''<main class="cv-print"><header class="cv-header"><h1>Ahmed Mahrous</h1><p>Ph.D. candidate in Computer Science · KAUST</p><p><a href="mailto:ahmed.mahrous@kaust.edu.sa">ahmed.mahrous@kaust.edu.sa</a> · <a href="https://amahrous.com">amahrous.com</a> · <a href="https://orcid.org/0000-0003-4694-5336">ORCID: 0000-0003-4694-5336</a></p></header><section><h2>Research interests</h2><p>Machine learning; economics; decentralized finance.</p></section>'''
+cv_print+='<section>'+education+'</section><section><h2>Publications and accepted papers</h2><p class="cv-publications-note">Full author lists and paper links: <a href="https://amahrous.com/#research">amahrous.com/#research</a></p><ol>'+cv_publications+'</ol></section><section>'+awards+'</section><section>'+teaching+'</section></main>'
+cv_print=re.sub(r' id="[^"]+"', '', cv_print)
+cv_doc=page('Ahmed Mahrous | CV','<div class="cv-screen">'+cv+'</div>'+cv_print)
+cv_doc=cv_doc.replace('<body>', '<body class="cv-page">').replace('</head>', '<link rel="stylesheet" href="cv.css"></head>')
+(root/'docs/cv.html').write_text(cv_doc)
 for p in papers:
  out=root/'docs/papers'/p['slug'];out.mkdir(parents=True,exist_ok=True)
  fulltext=clean_reading_text((root/'content'/(p['slug']+'.html')).read_text())
