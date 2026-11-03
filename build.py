@@ -109,9 +109,9 @@ cv_venues={
  'pump-and-dump':'Finance Research Letters, 2024',
  'financial-microblog-emojis':'IEEE IDSTA 2023 · Best Student Paper Award',
 }
-cv_publications=''.join('<li><a href="'+e(p.get('pdf') or ('papers/'+p['slug']+'/'))+'">'+e(p['title'])+'</a><span class="cv-venue">'+e(cv_venues[p['slug']])+'</span></li>' for p in papers)
+cv_publications=''.join('<li><span class="cv-number">'+str(number)+'.</span><a href="'+e(p.get('pdf') or ('papers/'+p['slug']+'/'))+'">'+e(p['title'])+'</a><span class="cv-venue">'+e(cv_venues[p['slug']])+'</span></li>' for number,p in enumerate(papers,1))
 cv_print='''<main class="cv-print"><header class="cv-header"><h1>Ahmed Mahrous</h1><p>Ph.D. candidate in Computer Science · KAUST</p><p><a href="mailto:ahmed.mahrous@kaust.edu.sa">ahmed.mahrous@kaust.edu.sa</a> · <a href="https://amahrous.com">amahrous.com</a> · <a href="https://orcid.org/0000-0003-4694-5336">ORCID: 0000-0003-4694-5336</a></p></header><section><h2>Research interests</h2><p>Machine learning; economics; decentralized finance.</p></section>'''
-cv_print+='<section>'+education+'</section><section><h2>Publications and accepted papers</h2><p class="cv-publications-note">Full author lists and paper links: <a href="https://amahrous.com/#research">amahrous.com/#research</a></p><ol>'+cv_publications+'</ol></section><section>'+awards+'</section><section>'+teaching+'</section></main>'
+cv_print+='<section>'+education+'</section><section><h2>Publications and accepted papers</h2><p class="cv-publications-note">Full author lists and paper links: <a href="https://amahrous.com/#research">amahrous.com/#research</a></p><ol role="list">'+cv_publications+'</ol></section><section>'+awards+'</section><section>'+teaching+'</section></main>'
 cv_print=re.sub(r' id="[^"]+"', '', cv_print)
 cv_doc=page('Ahmed Mahrous | CV','<div class="cv-screen">'+cv+'</div>'+cv_print)
 cv_doc=cv_doc.replace('<body>', '<body class="cv-page">').replace('</head>', '<link rel="stylesheet" href="cv.css"></head>')

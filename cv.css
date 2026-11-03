@@ -20,7 +20,10 @@
   .cv-print p { margin: 2pt 0; }
   .cv-print ul, .cv-print ol { margin: 2pt 0 0; padding-left: 15pt; }
   .cv-print li { margin: 2pt 0; break-inside: avoid; }
-  .cv-print ol li { margin: 3pt 0; padding-left: 2pt; }
+  /* Keep both digits inside the item box; Safari PDF can clip outside markers. */
+  .cv-print ol { padding-left: 0; list-style: none; }
+  .cv-print ol li { position: relative; margin: 3pt 0; padding-left: 24pt; }
+  .cv-number { position: absolute; left: 0; top: 0; width: 18pt; text-align: right; }
   .cv-print ol li > a { font-weight: bold; }
   .cv-venue { display: block; font-style: italic; }
   .cv-publications-note { font-size: 9pt; }
