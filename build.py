@@ -61,6 +61,7 @@ def paper_links(p,on_paper=False):
  if p.get('pdf'):links.append('<a class="pdf-button" href="'+e(p['pdf'])+'" target="_blank" rel="noopener" type="application/pdf">PDF</a>')
  prefix='' if on_paper else '/papers/'+p['slug']+'/'
  links.append('<a href="'+prefix+'#full-text">'+('Read full text' if on_paper else 'HTML')+'</a>')
+ links.append('<a href="'+prefix+'citation.bib" type="application/x-bibtex">BibTeX</a>')
  if on_paper:
   resources=[('DOI', 'https://doi.org/'+p['citation']['doi'])] if p['citation'].get('doi') else []
   resources.extend([('arXiv', p.get('arxiv')), (p.get('code_label', 'Code'), p.get('code')), ('Data', p.get('data')), (p.get('archive_label', 'Archive'), p.get('archive'))])
