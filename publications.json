@@ -147,6 +147,10 @@
         "label": "Oral",
         "detail": "Accepted for oral presentation; oral papers are a selected subset of accepted papers.",
         "distinction": true
+      },
+      {
+        "label": "~5% oral acceptance",
+        "detail": "ICAIF 2026 listed 52 oral presentations and reported more than 1,000 submissions."
       }
     ],
     "code": "https://doi.org/10.5281/zenodo.23376383",
