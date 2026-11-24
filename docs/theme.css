@@ -13,11 +13,13 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --background: #1C1C1E;
-    --text: #E8E6E1;
+    --background: #000000;
+    --text: #D0D0D0;
     --secondary: #B5B3AE;
-    --link: #9CBFFF;
+    --link: #9999FF;
     --visited: #CAB3EF;
+    --navigation-link-color: var(--link);
+    --link-decoration: underline;
     --surface: #28282B;
     --border: #76767C;
     --figure-blend: screen;
@@ -26,11 +28,13 @@
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --background: #1C1C1E;
-  --text: #E8E6E1;
+  --background: #000000;
+  --text: #D0D0D0;
   --secondary: #B5B3AE;
-  --link: #9CBFFF;
+  --link: #9999FF;
   --visited: #CAB3EF;
+  --navigation-link-color: var(--link);
+  --link-decoration: underline;
   --surface: #28282B;
   --border: #76767C;
   --figure-blend: screen;
@@ -40,6 +44,10 @@ html, body { background: var(--background); color: var(--text); }
 body { font-size: 18px; line-height: 1.6; }
 a { color: var(--link); text-underline-offset: .14em; }
 a:visited { color: var(--visited); }
+@media screen {
+  .site-name, .site-links a { color: var(--navigation-link-color, inherit) !important; }
+  .site-name, .site-links a, .pdf-button { text-decoration-line: var(--link-decoration, none); }
+}
 a:focus-visible, button:focus-visible, select:focus-visible {
   outline: 2px solid var(--link); outline-offset: 4px;
 }
