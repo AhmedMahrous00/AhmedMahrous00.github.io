@@ -142,6 +142,7 @@ for path in (root/'docs').rglob('*.html'):
  doc=path.read_text()
  extra='<link rel="canonical" href="'+url+'">'
  if rel=='index.html':extra+='<meta name="google-site-verification" content="buPO1n3ENFEPNSp-WnntKPyLbbAgw3OhRg6FdBMhLYc">'
+ if rel=='index.html':extra+='<meta property="og:title" content="Ahmed Mahrous | Academic Homepage"><meta property="og:description" content="Ahmed Mahrous: research on learning, strategic behavior, and decentralized financial systems at KAUST."><meta property="og:url" content="https://amahrous.com/"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Ahmed Mahrous | Academic Homepage"><meta name="twitter:description" content="Ahmed Mahrous: research on learning, strategic behavior, and decentralized financial systems at KAUST.">'
  paper=next((item for item in papers if suffix=='papers/'+item['slug']+'/'),None)
  if paper:
   schema={'@context':'https://schema.org','@type':'ScholarlyArticle','@id':url+'#paper','headline':paper['title'],'name':paper['title'],'author':[{'@type':'Person','name':name,**({'@id':'https://orcid.org/0000-0003-4694-5336','sameAs':'https://scholar.google.com/citations?user=kOy2h6EAAAAJ'} if name=='Ahmed Mahrous' else {})} for name in author_names(paper)],'description':paper['summary'],'abstract':abstracts[paper['slug']],'url':url,'inLanguage':'en','datePublished':paper['year'],'mainEntityOfPage':url}
