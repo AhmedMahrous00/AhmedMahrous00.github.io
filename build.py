@@ -178,3 +178,8 @@ for path in (root/'docs').rglob('*.html'):
  path.write_text(doc.replace('</head>',extra+'</head>'))
 (root/'docs/sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+e(url)+'</loc></url>' for url in sorted(urls))+'</urlset>')
 (root/'docs/robots.txt').write_text('User-agent: *\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nSitemap: '+base+'/sitemap.xml\n')
+
+# Generate Markdown alternates and llms directories from the built public HTML.
+# Node.js 18+ is needed; the exporter has no npm dependencies.
+import subprocess
+subprocess.run(['node', str(root/'scripts/build_markdown.cjs')], check=True)
