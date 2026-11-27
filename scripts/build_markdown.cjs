@@ -74,7 +74,7 @@ function buildMarkdown(pages, papers, origin="https://amahrous.com") {
       const a=n.a,tag=n.tag;
       if(tag==="math")return esc((a.display==="block"?"$$":"$")+tex(n)+(a.display==="block"?"$$":"$"));
       if(tag==="img"){const im=image(n,anchor);return `<a href="${esc(im.url)}">${esc(im.label)}${im.embedded?" (see source figure)":""}</a>`;}
-      const inside=n.c.map(x=>tableHTML(x,a.id||anchor)).join("");
+      const inside=n.c.map(x=>tableHTML(x,a.id||anchor)).join("").replace(/\s*\n\s*/g," ");
       if(tag==="a"){const url=absolute(a.href||"",base);return url?`<a href="${esc(url)}">${inside}</a>`:inside;}
       const allowed=new Set(["table","caption","thead","tbody","tfoot","tr","td","th","colgroup","col","sub","sup","em","i","strong","b","code","br","p","ul","ol","li"]);
       if(!allowed.has(tag))return inside;
@@ -107,7 +107,9 @@ function buildMarkdown(pages, papers, origin="https://amahrous.com") {
     }
     let content=render(scope).trim().replace(/\n[ \t]+\n/g,"\n\n").replace(/\n{3,}/g,"\n\n");
     const paper=papers.find(p=>page.path===`papers/${p.slug}/index.html`);
-    if(!content.startsWith("# "))content="# "+(paper?paper.title:page.path==="index.html"?"Ahmed Mahrous — Academic Homepage":title)+"\n\n"+content;
+    const existingHeading=content.match(/^# .+$/m);
+    if(existingHeading)content=existingHeading[0]+"\n\n"+content.replace(existingHeading[0],"").trim();
+    else content="# "+(paper?paper.title:page.path==="index.html"?"Ahmed Mahrous — Academic Homepage":title)+"\n\n"+content;
     const lineEnd=content.indexOf("\n");
     content=content.slice(0,lineEnd)+"\n\nSource: "+mdLink(base,base)+"\n"+content.slice(lineEnd);
     content=content.replace(/\n{3,}/g,"\n\n").trim()+"\n";
